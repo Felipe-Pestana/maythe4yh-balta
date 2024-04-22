@@ -1,6 +1,6 @@
 ﻿namespace MayTheFouthBackend.Domain.Interfaces.IRepositories;
 
-public interface IUnitOfWord
+public interface IUnitOfWork
 {
     Task Commit(CancellationToken cancellationToken);
 }
