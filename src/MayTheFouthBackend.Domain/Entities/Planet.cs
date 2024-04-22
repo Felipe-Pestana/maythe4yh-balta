@@ -3,7 +3,7 @@
 public class Planet : Entity
 {
     private List<int> _characteres; 
-    private List<int> _moveis; 
+    private List<int> _movies; 
     public Planet(string name, 
                 string rotationPeriod, 
                 string orbitalPeriod, 
@@ -24,7 +24,7 @@ public class Planet : Entity
         SurfaceWater = surfaceWater;
         Population = population;
 
-        _moveis = new List<int>();
+        _movies = new List<int>();
         _characteres = new List<int>();
     }
 
@@ -42,8 +42,8 @@ public class Planet : Entity
     public IReadOnlyCollection<int> Characters { get => _characteres;  }
 
     //TODO IReadOnlyCollection de Filmes
-    public IReadOnlyCollection<int> Movies { get => _moveis;}
+    public IReadOnlyCollection<int> Movies { get => _movies;}
 
     public void AddCharacter(int character) =>_characteres.Add(character);
-    public void AddMoveis(int move) =>_moveis.Add(move);
+    public void AddMoveis(int move) => _movies.Add(move);
 }
