@@ -12,5 +12,15 @@ namespace MayTheFouthBackend.Application.Mappins
 
             }; 
         }
+
+        public static IEnumerable<PlanetDto> MapToIEnumerablePlanetDto(this IEnumerable<Planet> planets)
+        {
+            var planetsDtos = new List<PlanetDto>();
+            foreach (var planet in planets)
+            {
+                planetsDtos.Add(MapToPlanetDto(planet));
+            }
+            return planetsDtos;
+        }
     }
 }
