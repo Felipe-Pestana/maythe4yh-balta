@@ -6,9 +6,9 @@ namespace MayTheFouthBackend.Infra.Data.Repositories;
 public class UnitOfWork : IUnitOfWork
 {
     private IPlanetRepository _planetRepository;
-    private ApplicationContext _context;
+    private ApplicationDbContext _context;
 
-    public UnitOfWork(ApplicationContext context)
+    public UnitOfWork(ApplicationDbContext context)
     {
         _context = context;
     }
