@@ -18,7 +18,7 @@ namespace MayTheFouthBackend.Infra.Data.Repositories
 
         public async Task CreateAsync(T entity)
         {
-            await _context.SaveChangesAsync();
+            await _set.AddAsync(entity);
         }
 
         public async Task<bool> DeleteAsync(int id)

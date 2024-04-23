@@ -2,5 +2,6 @@
 
 public interface IUnitOfWork
 {
-    Task Commit(CancellationToken cancellationToken);
+    public IPlanetRepository PlanetRepository { get;}
+    Task Commit();
 }
