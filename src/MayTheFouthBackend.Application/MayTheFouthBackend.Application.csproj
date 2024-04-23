@@ -10,4 +10,12 @@
     <ProjectReference Include="..\MayTheFouthBackend.Domain\MayTheFouthBackend.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Features\Planet\GetAll\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="12.2.0" />
+  </ItemGroup>
+
 </Project>
