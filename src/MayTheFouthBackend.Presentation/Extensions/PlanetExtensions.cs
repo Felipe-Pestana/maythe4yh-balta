@@ -4,7 +4,7 @@
     {
         public static void MapPlanetEndpoint(this WebApplication app)
         {
-            app.MapGet("/teste", () => "ola Paneta!"); 
+            app.MapGet("/teste", () => "ola Paneta!").WithTags("planet"); 
         }
     }
 }

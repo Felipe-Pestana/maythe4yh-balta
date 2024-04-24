@@ -10,4 +10,9 @@
     <ProjectReference Include="..\MayTheFouthBackend.Domain\MayTheFouthBackend.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Flunt" Version="2.0.5" />
+    <PackageReference Include="MediatR" Version="12.2.0" />
+  </ItemGroup>
+
 </Project>
