@@ -9,8 +9,16 @@ namespace MayTheFouthBackend.Presentation.Extensions
     {
         public static void MapPlanetEndpoint(this WebApplication app)
         {
-            app.MapGet("/Planet", async ([FromQuery] PlanetGetAllQuery query, [FromServices] IMediator  mediator) =>
+            app.MapGet("/planets", async (int pageSize, int currentPage, [FromServices] IMediator mediator) =>
             {
+
+                var query = new PlanetGetAllQuery
+                {
+
+                    CurrentPage = currentPage,
+                    PageSize = pageSize,
+                };
+
                 var result = await mediator.Send(query);
 
                 return result == null ? Results.NotFound(result) : Results.Ok(result);
