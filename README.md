@@ -11,13 +11,13 @@ Desenvolvimento de uma API completa, fornecendo recursos como criação, leitura
 
 ## Participantes
 ### 🚀 Capitão
-[NOME e GITHUB]
+[Felipe Pestana](github.com/Felipe-Pestana)
 
 ### 💂‍♀️ Batalhão
-* [NOME e GITHUB]
-* [NOME e GITHUB]
-* [NOME e GITHUB]
-* [NOME e GITHUB]
+* [Raul Silva](https://github.com/RaMadaSilva)
+* [Andre Fonseca](https://github.com/andrefons)
+* [Gabriel Prado](https://github.com/Gabrielbprado)
+* [Liedson Leite](https://github.com/Ol1veirx)
 
 ## ⚙️ Tecnologias
 * C# 12
