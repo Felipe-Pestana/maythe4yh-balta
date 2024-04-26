@@ -3,13 +3,16 @@ using Microsoft.EntityFrameworkCore;
 
 namespace MayTheFouthBackend.Infra.Data.Contexts
 {
-    public class ApplicationContext : DbContext
+    public class ApplicationDbContext : DbContext
     {
-        public ApplicationContext(DbContextOptions<ApplicationContext> options) 
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) 
             : base(options)
         {
         }
 
         public DbSet<Planet> Planets { get; set; }
+        public DbSet<Character> Character { get; set; }
+
+        
     }
 }

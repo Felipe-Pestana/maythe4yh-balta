@@ -7,10 +7,10 @@ namespace MayTheFouthBackend.Infra.Data.Repositories
 {
     public class BaseRepository<T> : IBaseRepository<T> where T : Entity
     {
-        private readonly ApplicationContext _context;
+        private readonly ApplicationDbContext _context;
         private readonly DbSet<T> _set;
 
-        public BaseRepository(ApplicationContext context)
+        public BaseRepository(ApplicationDbContext context)
         {
             _context = context;
             _set = _context.Set<T>();

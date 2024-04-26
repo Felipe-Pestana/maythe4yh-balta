@@ -6,14 +6,17 @@ namespace MayTheFouthBackend.Infra.Data.Repositories;
 public class UnitOfWork : IUnitOfWork
 {
     private IPlanetRepository _planetRepository;
-    private ApplicationContext _context;
+    private ICharacterRepository _characterRepository;
+    private ApplicationDbContext _context;
 
-    public UnitOfWork(ApplicationContext context)
+    public UnitOfWork(ApplicationDbContext context)
     {
         _context = context;
     }
 
     public IPlanetRepository PlanetRepository => _planetRepository?? new PlanetRepository(_context);
+
+    public ICharacterRepository CharacterRepository => _characterRepository?? new CharacterRepository(_context);
 
     public async Task Commit(CancellationToken cancellationToken)
     {
