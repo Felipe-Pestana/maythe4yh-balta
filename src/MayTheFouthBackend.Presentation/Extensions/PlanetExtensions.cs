@@ -9,7 +9,7 @@ namespace MayTheFouthBackend.Presentation.Extensions
     {
         public static void MapPlanetEndpoint(this WebApplication app)
         {
-            app.MapGet("/planets", async (int pageSize, int currentPage, [FromServices] IMediator mediator) =>
+            app.MapGet("/api/v1/planets", async (int pageSize, int currentPage, [FromServices] IMediator mediator) =>
             {
 
                 var query = new PlanetGetAllQuery
@@ -25,7 +25,7 @@ namespace MayTheFouthBackend.Presentation.Extensions
 
             }).WithTags("planet");
 
-            app.MapGet("/Planet/{id:int}", async (int id , [FromServices] IMediator mediator) =>
+            app.MapGet("/api/v1/Planet/{id:int}", async (int id , [FromServices] IMediator mediator) =>
             {
                 var query = new PlanetGetByIdQuery { Id = id };
                 var result = await mediator.Send(query);
