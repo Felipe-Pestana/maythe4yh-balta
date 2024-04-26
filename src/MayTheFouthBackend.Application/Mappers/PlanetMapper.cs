@@ -9,8 +9,17 @@ namespace MayTheFouthBackend.Application.Mappins
         {
             return new PlanetDto
             {
-
-            }; 
+                Name = planet.Name,
+                Climate = planet.Climate,
+                Diameter = planet.Diameter,
+                Gravity = planet.Gravity,
+                OrbitalPeriod = planet.OrbitalPeriod,
+                Population = planet.Population,
+                RotationPeriod = planet.RotationPeriod,
+                SurfaceWater = planet.SurfaceWater,
+                Terrain = planet.Terrain,
+                Movies = planet.Movies.Select(x => new MoveInfoDto { Id = x.Id, Title = x.Title })
+            };
         }
 
         public static IEnumerable<PlanetDto> MapToIEnumerablePlanetDto(this IEnumerable<Planet> planets)

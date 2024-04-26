@@ -3,16 +3,16 @@
 public class Planet : Entity
 {
     private List<int> _characteres; 
-    private List<int> _movies; 
+    private List<Movie> _movies; 
     public Planet(string name, 
-                string rotationPeriod, 
-                string orbitalPeriod, 
-                string diameter, 
+                float rotationPeriod, 
+                int orbitalPeriod, 
+                int diameter, 
                 string climate, 
                 string gravity, 
                 string terrain, 
-                string surfaceWater, 
-                string population)
+                float surfaceWater, 
+                int population)
     {
         Name = name;
         RotationPeriod = rotationPeriod;
@@ -24,26 +24,29 @@ public class Planet : Entity
         SurfaceWater = surfaceWater;
         Population = population;
 
-        _movies = new List<int>();
+        _movies = new List<Movie>();
         _characteres = new List<int>();
     }
 
     public string Name { get; private set; }
-    public string RotationPeriod { get; private set; }
-    public string OrbitalPeriod { get; private set; }
-    public string Diameter { get; private set; }
+    public float RotationPeriod { get; private set; }
+    public int OrbitalPeriod { get; private set; }
+    public int Diameter { get; private set; }
     public string Climate { get; private set; }
     public string Gravity { get; private set; }
     public string Terrain { get; private set; }
-    public string SurfaceWater { get; private set; }
-    public string Population { get; private set; }
+    public float SurfaceWater { get; private set; }
+    public int Population { get; private set; }
 
     //TODO IReadOnlyCollection de Personagens
     public IReadOnlyCollection<int> Characters { get => _characteres;  }
 
-    //TODO IReadOnlyCollection de Filmes
-    public IReadOnlyCollection<int> Movies { get => _movies;}
+    public IReadOnlyCollection<Movie> Movies { get => _movies;}
 
     public void AddCharacter(int character) =>_characteres.Add(character);
+<<<<<<< HEAD
     public void AddMovies(int move) => _movies.Add(move);
+=======
+    public void AddMoveis(Movie move) => _movies.Add(move);
+>>>>>>> 3ad735c7c1d5dbd080b1f791f799d197f3054331
 }
