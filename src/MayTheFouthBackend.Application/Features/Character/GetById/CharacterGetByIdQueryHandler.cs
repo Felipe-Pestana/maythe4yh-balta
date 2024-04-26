@@ -5,11 +5,11 @@ using MediatR;
 
 namespace MayTheFouthBackend.Application.Features.Character.GetById;
 
-public class PlanetGetByIdQueryHandler : IRequestHandler<CharacterGetByIdQuery, ResponseCharacterGetById>
+public class CharacterGetByIdQueryHandler : IRequestHandler<CharacterGetByIdQuery, ResponseCharacterGetById>
 {
     private readonly IUnitOfWork _uow;
 
-    public PlanetGetByIdQueryHandler(IUnitOfWork uow)
+    public CharacterGetByIdQueryHandler(IUnitOfWork uow)
             => _uow = uow;
     public async Task<ResponseCharacterGetById> Handle(CharacterGetByIdQuery request, CancellationToken cancellationToken)
     {

@@ -6,7 +6,7 @@ namespace MayTheFouthBackend.Infra.Data.Repositories;
 
 public class CharacterRepository : BaseRepository<Character>, ICharacterRepository
 {
-    public CharacterRepository(ApplicationContext context)
+    public CharacterRepository(ApplicationDbContext context)
        : base(context)
     {
     }

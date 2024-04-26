@@ -3,7 +3,7 @@
 public class Character : Entity
 {
     private List<int> _movies;
-    private List<int> _homeworld;
+    private List<Planet> _homeworld;
     public Character(string name,
                 string height,
                 string weight,
@@ -27,7 +27,7 @@ public class Character : Entity
         Homeworld = homeworld;
         Movies = movies;
 
-        _homeworld = new List<int>();
+        _homeworld = new List<Planet>();
         _movies = new List<int>();
     }
 
@@ -42,6 +42,6 @@ public class Character : Entity
     public string Homeworld { get; private set; }
     public string Movies { get; private set;}
 
-    public void AddHomeworld(int homeworld) => _homeworld.Add(homeworld);
+    public void AddHomeworld(Planet homeworld) => _homeworld.Add(homeworld);
     public void AddMovies(int move) => _movies.Add(move);
 }

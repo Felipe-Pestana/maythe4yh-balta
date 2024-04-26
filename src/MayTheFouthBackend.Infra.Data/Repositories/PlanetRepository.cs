@@ -6,7 +6,7 @@ namespace MayTheFouthBackend.Infra.Data.Repositories;
 
 public class PlanetRepository : BaseRepository<Planet>, IPlanetRepository
 {
-    public PlanetRepository(ApplicationContext context) 
+    public PlanetRepository(ApplicationDbContext context) 
         : base(context)
     {
     }
