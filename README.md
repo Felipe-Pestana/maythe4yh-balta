@@ -11,7 +11,7 @@ Desenvolvimento de uma API completa, fornecendo recursos como criação, leitura
 
 ## Participantes
 ### 🚀 Capitão
-[Felipe Pestana](github.com/Felipe-Pestana)
+[Felipe Pestana](https://github.com/Felipe-Pestana)
 
 ### 💂‍♀️ Batalhão
 * [Raul Silva](https://github.com/RaMadaSilva)
