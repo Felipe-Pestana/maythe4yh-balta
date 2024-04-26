@@ -14,7 +14,7 @@ namespace MayTheFouthBackend.Application.Features.Planet.GetAll
             Message = message;
             StatusCode = status;
         }
-        public ResponsePlanetGetAll(string message, paginatedListResponse<PlanetDto> datas)
+        public ResponsePlanetGetAll(string message, PaginatedListResponse<PlanetDto> datas)
         {
             Message = message;
             Datas = datas;
@@ -22,6 +22,6 @@ namespace MayTheFouthBackend.Application.Features.Planet.GetAll
 
         }
 
-        public paginatedListResponse<PlanetDto>? Datas { get; set; }
+        public PaginatedListResponse<PlanetDto>? Datas { get; set; }
     }
 }

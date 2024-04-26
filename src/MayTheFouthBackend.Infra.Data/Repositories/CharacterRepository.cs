@@ -4,10 +4,10 @@ using MayTheFouthBackend.Infra.Data.Contexts;
 
 namespace MayTheFouthBackend.Infra.Data.Repositories;
 
-public class PlanetRepository : BaseRepository<Planet>, IPlanetRepository
+public class CharacterRepository : BaseRepository<Character>, ICharacterRepository
 {
-    public PlanetRepository(ApplicationDbContext context) 
-        : base(context)
+    public CharacterRepository(ApplicationDbContext context)
+       : base(context)
     {
     }
 }
