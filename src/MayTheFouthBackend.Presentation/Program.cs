@@ -18,8 +18,14 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+
+app.MapPlanetEndpoint();
+app.MapStarshipEndpoint();
+
 app.MapPlanetEndpoint(); 
 app.MapCharacterEndpoint();
+
 
 app.Run();
 

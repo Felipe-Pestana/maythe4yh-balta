@@ -6,8 +6,13 @@ namespace MayTheFouthBackend.Infra.Data.Repositories;
 public class UnitOfWork : IUnitOfWork
 {
     private IPlanetRepository _planetRepository;
+
+    private IStarshipRepository _starshipRepository;
+    private ApplicationContext _context;
+
     private ICharacterRepository _characterRepository;
     private ApplicationDbContext _context;
+
 
     public UnitOfWork(ApplicationDbContext context)
     {
@@ -15,6 +20,7 @@ public class UnitOfWork : IUnitOfWork
     }
 
     public IPlanetRepository PlanetRepository => _planetRepository?? new PlanetRepository(_context);
+    public IStarshipRepository StarshipRepository => _starshipRepository?? new StarshipRepository(_context);
 
     public ICharacterRepository CharacterRepository => _characterRepository?? new CharacterRepository(_context);
 
