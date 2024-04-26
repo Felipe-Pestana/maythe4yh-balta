@@ -17,7 +17,7 @@ namespace MayTheFouthBackend.Application.Features.Planet.GetById
         {
             try
             {
-                var result = await _uow.PlanetRepository.GetByIdAsync(request.Id);
+                var result = await _uow.PlanetRepository.GetPlanetWithInfo(request.Id);
 
                 if (result == null)
                     return new ResponsePlanetGetById("Planeta não encontrado", 404);
