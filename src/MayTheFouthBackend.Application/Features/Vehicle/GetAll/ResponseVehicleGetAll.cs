@@ -8,22 +8,22 @@ using System.Threading.Tasks;
 
 namespace MayTheFouthBackend.Application.Features.Starship.GetAll
 {
-    public class ResponseStarshipGetAll : Response
+    public class ResponseVehicleGetAll : Response
     {
-        public ResponseStarshipGetAll() { }
+        public ResponseVehicleGetAll() { }
 
-        public ResponseStarshipGetAll(string message, int status)
+        public ResponseVehicleGetAll(string message, int status)
         {
             Message = message;
             StatusCode = status;
         }
-        public ResponseStarshipGetAll(string message, PaginatedListResponse<StarshipDto> datas)
+        public ResponseVehicleGetAll(string message, PaginatedListResponse<VehicleDto> datas)
         {
             Message = message;
             Datas = datas;
             StatusCode = 200;
         }
 
-        public PaginatedListResponse<StarshipDto>? Datas { get; set; }
+        public PaginatedListResponse<VehicleDto>? Datas { get; set; }
     }
 }

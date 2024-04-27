@@ -44,9 +44,5 @@ public class Planet : Entity
     public IReadOnlyCollection<Movie> Movies { get => _movies;}
 
     public void AddCharacter(int character) =>_characteres.Add(character);
-<<<<<<< HEAD
-    public void AddMovies(int move) => _movies.Add(move);
-=======
     public void AddMoveis(Movie move) => _movies.Add(move);
->>>>>>> 3ad735c7c1d5dbd080b1f791f799d197f3054331
 }

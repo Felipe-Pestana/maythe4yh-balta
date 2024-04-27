@@ -11,6 +11,6 @@ namespace MayTheFouthBackend.Infra.Data.Repositories
 {
     public class StarshipRepository :BaseRepository<Starship>, IStarshipRepository
     {
-        public StarshipRepository(ApplicationContext context) : base(context) { }
+        public StarshipRepository(ApplicationDbContext context) : base(context) { }
     }
 }
