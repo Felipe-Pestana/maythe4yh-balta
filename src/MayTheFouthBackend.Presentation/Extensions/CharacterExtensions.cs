@@ -1,6 +1,5 @@
 ﻿using MayTheFouthBackend.Application.Features.Character.GetAll;
 using MayTheFouthBackend.Application.Features.Character.GetById;
-using MayTheFouthBackend.Domain.Interfaces.IRepositories;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,12 +9,11 @@ public static class CharacterExtensions
 {
     public static void MapCharacterEndpoint(this WebApplication app)
     {
-        app.MapGet("/characters", async (int pageSize, int currentPage, [FromServices] IMediator mediator) =>
+        app.MapGet("api/v1/characters", async (int pageSize, int currentPage, [FromServices] IMediator mediator) =>
         {
 
             var query = new CharacterGetAllQuery
             {
-
                 CurrentPage = currentPage,
                 PageSize = pageSize,
             };
@@ -26,7 +24,7 @@ public static class CharacterExtensions
 
         }).WithTags("character");
 
-        app.MapGet("/Character/{id:int}", async (int id, [FromServices] IMediator mediator) =>
+        app.MapGet("api/v1/Character/{id:int}", async (int id, [FromServices] IMediator mediator) =>
         {
             var query = new CharacterGetByIdQuery { Id = id };
             var result = await mediator.Send(query);

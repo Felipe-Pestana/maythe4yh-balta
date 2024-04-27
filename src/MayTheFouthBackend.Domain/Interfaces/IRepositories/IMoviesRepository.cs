@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MayTheFouthBackend.Domain.Interfaces.IRepositories
 {
-    public interface IMoviesRepository : IBaseRepository<Movies>
+    public interface IMoviesRepository : IBaseRepository<Movie>
     {
     }
 }

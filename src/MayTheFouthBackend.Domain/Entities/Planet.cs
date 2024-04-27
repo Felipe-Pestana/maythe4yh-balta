@@ -2,16 +2,16 @@
 
 public class Planet : Entity
 {
-    private List<int> _characteres; 
-    private List<Movie> _movies; 
-    public Planet(string name, 
-                float rotationPeriod, 
-                int orbitalPeriod, 
-                int diameter, 
-                string climate, 
-                string gravity, 
-                string terrain, 
-                float surfaceWater, 
+    private List<Character> _characteres;
+    private List<Movie> _movies;
+    public Planet(string name,
+                float rotationPeriod,
+                int orbitalPeriod,
+                int diameter,
+                string climate,
+                string gravity,
+                string terrain,
+                float surfaceWater,
                 int population)
     {
         Name = name;
@@ -25,7 +25,7 @@ public class Planet : Entity
         Population = population;
 
         _movies = new List<Movie>();
-        _characteres = new List<int>();
+        _characteres = new List<Character>();
     }
 
     public string Name { get; private set; }
@@ -38,15 +38,11 @@ public class Planet : Entity
     public float SurfaceWater { get; private set; }
     public int Population { get; private set; }
 
-    //TODO IReadOnlyCollection de Personagens
-    public IReadOnlyCollection<int> Characters { get => _characteres;  }
+    public IReadOnlyCollection<Character> Characters { get => _characteres; }
 
-    public IReadOnlyCollection<Movie> Movies { get => _movies;}
+    public IReadOnlyCollection<Movie> Movies { get => _movies; }
 
-    public void AddCharacter(int character) =>_characteres.Add(character);
-<<<<<<< HEAD
-    public void AddMovies(int move) => _movies.Add(move);
-=======
+    public void AddCharacter(Character character) => _characteres.Add(character);
     public void AddMoveis(Movie move) => _movies.Add(move);
->>>>>>> 3ad735c7c1d5dbd080b1f791f799d197f3054331
+
 }
