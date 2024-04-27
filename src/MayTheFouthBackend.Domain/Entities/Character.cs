@@ -11,7 +11,8 @@ public class Character : Entity
                 string eyeColor,
                 string birthYear,
                 string gender,
-                Planet homeworld
+                int planetId
+
               )
     {
         Name = name;
@@ -22,7 +23,7 @@ public class Character : Entity
         EyeColor = eyeColor;
         BirthYear = birthYear;
         Gender = gender;
-        Homeworld = homeworld;
+        PlanetId = planetId;
 
         _movies = new List<Movie>();
     }
