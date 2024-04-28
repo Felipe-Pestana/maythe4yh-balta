@@ -9,7 +9,7 @@ namespace MayTheFouthBackend.Presentation.Extensions
     {
         public static void MapPlanetEndpoint(this WebApplication app)
         {
-            app.MapGet("/api/v1/planets", async (int pageSize, int currentPage, [FromServices] IMediator mediator) =>
+            app.MapGet("/api/v1/planets", async ([FromServices] IMediator mediator, int currentPage = 1, int pageSize = 10) =>
             {
 
                 var query = new PlanetGetAllQuery
@@ -23,16 +23,16 @@ namespace MayTheFouthBackend.Presentation.Extensions
 
                 return result == null ? Results.NotFound(result) : Results.Ok(result);
 
-            }).WithTags("planet");
+            }).WithTags("Planet");
 
-            app.MapGet("/api/v1/Planet/{id:int}", async (int id , [FromServices] IMediator mediator) =>
+            app.MapGet("/api/v1/planet/{id:int}", async ([FromServices] IMediator mediator, int id) =>
             {
                 var query = new PlanetGetByIdQuery { Id = id };
                 var result = await mediator.Send(query);
 
-                return result == null ? Results.NotFound() : Results.Ok(result); 
+                return result == null ? Results.NotFound() : Results.Ok(result);
 
-            }).WithTags("planet");
+            }).WithTags("Planet");
         }
     }
 }

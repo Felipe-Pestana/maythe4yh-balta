@@ -16,7 +16,7 @@ namespace MayTheFouthBackend.Application.Mappins
                 Length = vehicle.Length,
                 Maxspeed = vehicle.Maxspeed,
                 Crew = vehicle.Crew,
-                Passagers = vehicle.Passagers,
+                Passengers = vehicle.Passengers,
                 Cargocapacity = vehicle.Cargocapacity,
                 Consumables = vehicle.Consumables,
                 Class = vehicle.Class,

@@ -9,7 +9,7 @@ namespace MayTheFouthBackend.Application.Features.Starship.GetAll
 {
     public sealed class VehicleGetAllQuery : IRequest<ResponseVehicleGetAll>
     {
-        public int CurrentPage {  get; set; }
+        public int CurrentPage { get; set; }
         public int PageSize { get; set; }
     }
 }

@@ -15,7 +15,7 @@ namespace MayTheFouthBackend.Application.Dtos
         public float Length { get; set; }
         public int Maxspeed { get; set; }
         public int Crew { get; set; }
-        public int Passagers { get; set; }
+        public int Passengers { get; set; }
         public float Cargocapacity { get; set; }
         public string Consumables { get; set; } = string.Empty;
         public string Class { get; set; } = string.Empty;

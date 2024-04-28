@@ -20,13 +20,10 @@ app.useSwaggerApp();
 
 app.UseHttpsRedirection();
 
-
 app.MapPlanetEndpoint();
 app.MapStarshipEndpoint();
-
-app.MapPlanetEndpoint(); 
 app.MapCharacterEndpoint();
-
+app.MapVehicleEndpoint();
 
 app.Run();
 

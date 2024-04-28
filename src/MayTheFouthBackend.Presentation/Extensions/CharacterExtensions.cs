@@ -10,7 +10,7 @@ public static class CharacterExtensions
 {
     public static void MapCharacterEndpoint(this WebApplication app)
     {
-        app.MapGet("/characters", async (int pageSize, int currentPage, [FromServices] IMediator mediator) =>
+        app.MapGet("/api/v1/characters", async ([FromServices] IMediator mediator, int currentPage = 1, int pageSize = 10) =>
         {
 
             var query = new CharacterGetAllQuery
@@ -24,15 +24,15 @@ public static class CharacterExtensions
 
             return result == null ? Results.NotFound(result) : Results.Ok(result);
 
-        }).WithTags("character");
+        }).WithTags("Character");
 
-        app.MapGet("/Character/{id:int}", async (int id, [FromServices] IMediator mediator) =>
+        app.MapGet("/api/v1/Character/{id:int}", async ([FromServices] IMediator mediator, int id) =>
         {
             var query = new CharacterGetByIdQuery { Id = id };
             var result = await mediator.Send(query);
 
             return result == null ? Results.NotFound() : Results.Ok(result);
 
-        }).WithTags("character");
+        }).WithTags("Character");
     }
 }

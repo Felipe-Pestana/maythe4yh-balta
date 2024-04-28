@@ -17,7 +17,7 @@ namespace MayTheFouthBackend.Domain.Entities
             float length,
             int maxspeed,
             int crew,
-            int passagers,
+            int passengers,
             float cargocapacity,
             string consumables,
             string @class)
@@ -29,7 +29,7 @@ namespace MayTheFouthBackend.Domain.Entities
             Length = length;
             Maxspeed = maxspeed;
             Crew = crew;
-            Passagers = passagers;
+            Passengers = passengers;
             Cargocapacity = cargocapacity;            
             Consumables = consumables;
             Class = @class;
@@ -44,7 +44,7 @@ namespace MayTheFouthBackend.Domain.Entities
         public float Length { get; private set; }
         public int Maxspeed { get; private set; }
         public int Crew { get; private set; }
-        public int Passagers { get; private set; }
+        public int Passengers { get; private set; }
         public float Cargocapacity { get; private set; }        
         public string Consumables { get; private set; }
         public string Class { get; private set; }

@@ -44,6 +44,7 @@ CREATE TABLE Character (
 
 CREATE TABLE Vehicle(
     id int NOT NULL PRIMARY KEY,
+    name varchar(50) NOT NULL,
     model varchar(50) NOT NULL,
     manufacturer varchar(50) NOT NULL,
     cost_in_credits float NOT NULL,
