@@ -2,8 +2,7 @@
 
 public class Character : Entity
 {
-    private List<int> _movies;
-    private List<Planet> _homeworld;
+    private List<Movie> _movies;
     public Character(string name,
                 string height,
                 string weight,
@@ -12,8 +11,8 @@ public class Character : Entity
                 string eyeColor,
                 string birthYear,
                 string gender,
-                string homeworld,
-                string movies
+                int planetId
+
               )
     {
         Name = name;
@@ -24,11 +23,9 @@ public class Character : Entity
         EyeColor = eyeColor;
         BirthYear = birthYear;
         Gender = gender;
-        Homeworld = homeworld;
-        Movies = movies;
+        PlanetId = planetId;
 
-        _homeworld = new List<Planet>();
-        _movies = new List<int>();
+        _movies = new List<Movie>();
     }
 
     public string Name { get; private set; }
@@ -39,9 +36,9 @@ public class Character : Entity
     public string EyeColor { get; private set; }
     public string BirthYear { get; private set; }
     public string Gender { get; private set; }
-    public string Homeworld { get; private set; }
-    public string Movies { get; private set;}
+    public Planet Homeworld { get; private set; }
+    public int PlanetId { get; private set; }
+    public IReadOnlyCollection<Movie> Movies { get => _movies;  }
 
-    public void AddHomeworld(Planet homeworld) => _homeworld.Add(homeworld);
-    public void AddMovies(int move) => _movies.Add(move);
+    public void AddMovies(Movie move) => _movies.Add(move);
 }

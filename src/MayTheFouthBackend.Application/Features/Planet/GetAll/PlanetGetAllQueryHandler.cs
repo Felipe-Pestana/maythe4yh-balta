@@ -28,7 +28,7 @@ public class PlanetGetAllQueryHandler : IRequestHandler<PlanetGetAllQuery, Respo
 
         }catch (Exception ex)
         {
-            return new ResponsePlanetGetAll("Erro interno do servidor", 500);
+            return new ResponsePlanetGetAll(ex.Message, 500);
         }
     }
 }

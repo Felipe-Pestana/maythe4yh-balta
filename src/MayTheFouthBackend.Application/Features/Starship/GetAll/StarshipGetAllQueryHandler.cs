@@ -1,11 +1,7 @@
-﻿using MayTheFouthBackend.Application.Mappers;
+﻿using MayTheFouthBackend.Application.Dtos;
+using MayTheFouthBackend.Application.Mappers;
 using MayTheFouthBackend.Domain.Interfaces.IRepositories;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MayTheFouthBackend.Application.Features.Starship.GetAll
 {
@@ -30,14 +26,14 @@ namespace MayTheFouthBackend.Application.Features.Starship.GetAll
                 }
 
                 var resultDto = result.MapToIEnumerableStarhipDto();
+                return new ResponseStarshipGetAll("Listagem de Naves", resultDto.ToPaginationList(request.CurrentPage, request.PageSize));
 
-                return new ResponseStarshipGetAll("Listagem de naves existente", resultDto.ToPaginationList(request.CurrentPage, request.PageSize));
-            } 
+            }
             catch (Exception ex)
             {
                 return new ResponseStarshipGetAll("Erro no servidor.", 500);
             }
         }
     }
-   
+
 }
