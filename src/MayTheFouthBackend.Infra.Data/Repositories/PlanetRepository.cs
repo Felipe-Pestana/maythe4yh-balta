@@ -7,10 +7,7 @@ namespace MayTheFouthBackend.Infra.Data.Repositories;
 
 public class PlanetRepository : BaseRepository<Planet>, IPlanetRepository
 {
-<<<<<<< HEAD
-=======
     private readonly ApplicationDbContext _context;
->>>>>>> 3ad735c7c1d5dbd080b1f791f799d197f3054331
     public PlanetRepository(ApplicationDbContext context) 
         : base(context)
     {
@@ -19,6 +16,7 @@ public class PlanetRepository : BaseRepository<Planet>, IPlanetRepository
 
     public async Task<Planet> GetPlanetWithInfo(int id)
     {
+
         return await _context
                         .Planets
                         .AsNoTracking()
