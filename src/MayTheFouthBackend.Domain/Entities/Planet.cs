@@ -39,7 +39,6 @@ public class Planet : Entity
     public int Population { get; private set; }
 
     public IReadOnlyCollection<Character> Characters { get => _characteres; }
-
     public IReadOnlyCollection<Movie> Movies { get => _movies; }
 
     public void AddCharacter(Character character) => _characteres.Add(character);

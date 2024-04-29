@@ -8,8 +8,10 @@ public class UnitOfWork : IUnitOfWork
     private IPlanetRepository _planetRepository;
     private IStarshipRepository _starshipRepository;
     private ICharacterRepository _characterRepository;
+    private IMoviesRepository _moviesRepository;
     private IVehicleRepository _vehicleRepository;
-    private ApplicationDbContext _context;
+
+    private readonly ApplicationDbContext _context;
 
     public UnitOfWork(ApplicationDbContext context)
     {
@@ -18,8 +20,8 @@ public class UnitOfWork : IUnitOfWork
 
     public IPlanetRepository PlanetRepository => _planetRepository ?? new PlanetRepository(_context);
     public IStarshipRepository StarshipRepository => _starshipRepository ?? new StarshipRepository(_context);
-
     public ICharacterRepository CharacterRepository => _characterRepository ?? new CharacterRepository(_context);
+    public IMoviesRepository MoviesRepository => _moviesRepository ?? new MovieRepository(_context);
     public IVehicleRepository VehicleRepository => _vehicleRepository ?? new VehicleRepository(_context);
 
     public async Task Commit(CancellationToken cancellationToken)

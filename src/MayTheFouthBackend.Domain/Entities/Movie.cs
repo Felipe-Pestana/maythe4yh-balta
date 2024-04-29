@@ -3,11 +3,10 @@
     public class Movie : Entity
     {
 
-        private IReadOnlyCollection<Character> _characteres;
-        private IReadOnlyCollection<Planet> _planets;
-        private IReadOnlyCollection<Vehicle> _vehicles;
-        private IReadOnlyCollection<Starship> _starships;
-
+        private List<Character> _characteres;
+        private List<Planet> _planets;
+        private List<Vehicle> _vehicles;
+        private List<Starship> _starships;
 
         public string Title { get; private set; }
         public int Episode { get; private set; }
@@ -17,6 +16,11 @@
         public DateTime Release_date { get; private set; }
         public DateTime Created { get; private set; } = DateTime.Now;
         public DateTime Edited { get; private set; }
+        public IReadOnlyCollection<Starship> Starships { get =>_starships;}
+        public IReadOnlyCollection<Planet> Planets { get =>_planets;}
+        public IReadOnlyCollection<Vehicle> Vehicles { get =>_vehicles;}
+        public IReadOnlyCollection<Character> Characters { get =>_characteres;}
+
 
 
         public Movie(
@@ -33,6 +37,10 @@
             Director = director;
             Producer = producer;
             Release_date = releasse_date;
+            _characteres = new(); 
+            _planets = new();
+            _starships = new();
+            _vehicles = new();
         }
     }
 }
