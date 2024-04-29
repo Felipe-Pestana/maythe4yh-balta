@@ -16,6 +16,7 @@ public class PlanetRepository : BaseRepository<Planet>, IPlanetRepository
 
     public async Task<Planet> GetPlanetWithInfo(int id)
     {
+
         return await _context
                         .Planets
                         .AsNoTracking()

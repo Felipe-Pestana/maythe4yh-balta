@@ -20,7 +20,7 @@ namespace MayTheFouthBackend.Application.Mappins
                 Cargocapacity = vehicle.Cargocapacity,
                 Consumables = vehicle.Consumables,
                 Class = vehicle.Class,
-                Movies = vehicle.Movies.Select(x => new MoveInfoDto { Id = x.Id, Title = x.Title })
+                Movies = vehicle.Movies.Select(x => new ListInfoDto { Id = x.Id, Title = x.Title })
             };
         }
 

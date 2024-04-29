@@ -23,6 +23,7 @@ namespace MayTheFouthBackend.Infra.IOC.DependencyInjection
             services.AddRegisterService();
             services.AddCharacterService();
             services.AddPlanetService();
+            services.AddStarShipService();
             services.AddVehicleService();
         }
         public static void AddRegisterService(this IServiceCollection services)
@@ -47,6 +48,12 @@ namespace MayTheFouthBackend.Infra.IOC.DependencyInjection
         {
             services.AddScoped<IRequestHandler<PlanetGetAllQuery, ResponsePlanetGetAll>, PlanetGetAllQueryHandler>();
             services.AddScoped<IRequestHandler<PlanetGetByIdQuery, ResponsePlanetGetById>, PlanetGetByIdQueryHandler>();
+        }
+        public static void AddStarShipService(this IServiceCollection services)
+        {
+            services.AddScoped<IRequestHandler<StarshipGetAllQuery, ResponseStarshipGetAll>, StarshipGetAllQueryHandler>();
+            services.AddScoped<IRequestHandler<StarshipGetByIdQuery, ResponseStarshipGetById>, StarshipGetByIdQueryHandler>();
+
         }
         public static void AddVehicleService(this IServiceCollection services)
         {

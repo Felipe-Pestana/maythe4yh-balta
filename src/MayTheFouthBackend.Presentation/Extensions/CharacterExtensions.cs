@@ -1,6 +1,5 @@
 ﻿using MayTheFouthBackend.Application.Features.Character.GetAll;
 using MayTheFouthBackend.Application.Features.Character.GetById;
-using MayTheFouthBackend.Domain.Interfaces.IRepositories;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,7 +14,6 @@ public static class CharacterExtensions
 
             var query = new CharacterGetAllQuery
             {
-
                 CurrentPage = currentPage,
                 PageSize = pageSize,
             };

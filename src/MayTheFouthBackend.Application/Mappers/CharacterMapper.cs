@@ -9,7 +9,7 @@ public static class CharacterMapper
     {
         return new CharacterDto
         {
-
+            
         };
     }
 

@@ -17,8 +17,8 @@ namespace MayTheFouthBackend.Infra.Data.Contexts
         {
             base.OnModelCreating(mb);
 
-            mb.Entity<Planet>().ToTable("Planet");
-
+            mb.Entity<Planet>().ToTable("Planet"); 
+            mb.Entity<Character>().ToTable("Character");
             mb.Entity<Vehicle>().ToTable("Vehicle").Property(x=>x.CostInCredits).HasColumnName("cost_in_credits");
         }
     }

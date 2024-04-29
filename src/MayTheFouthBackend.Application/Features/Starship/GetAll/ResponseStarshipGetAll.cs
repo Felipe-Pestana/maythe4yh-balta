@@ -1,10 +1,5 @@
 ﻿using MayTheFouthBackend.Application.Dtos;
 using MayTheFouthBackend.Application.Features.Shared;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MayTheFouthBackend.Application.Features.Starship.GetAll
 {
@@ -17,7 +12,7 @@ namespace MayTheFouthBackend.Application.Features.Starship.GetAll
             Message = message;
             StatusCode = status;
         }
-        public ResponseStarshipGetAll(string message, PaginatedListResponse<StarshipDto> datas)
+        public ResponseStarshipGetAll(string message, PaginatedListResponse<StarshipDto>? datas)
         {
             Message = message;
             Datas = datas;

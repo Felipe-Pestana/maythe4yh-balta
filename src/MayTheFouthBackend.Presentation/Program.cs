@@ -1,9 +1,10 @@
 using MayTheFouthBackend.Infra.Data.Contexts;
+using MayTheFouthBackend.Infra.IOC.DependencyInjection;
 using MayTheFouthBackend.Presentation.Extensions;
 using Microsoft.EntityFrameworkCore;
-using MayTheFouthBackend.Infra.IOC.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
+
 builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddSwaggerGen();
@@ -12,11 +13,13 @@ builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlite
 builder.Services.AddRegisterService(); 
 builder.Services.AddDatabaseService(builder.Configuration);
 builder.Services.AddPlanetService();
+builder.Services.AddStarShipService();
+builder.Services.AddCharacterService();
 builder.Services.AddVehicleService();
 
 var app = builder.Build();
 
-app.useSwaggerApp(); 
+app.useSwaggerApp();
 
 app.UseHttpsRedirection();
 

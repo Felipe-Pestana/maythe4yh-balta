@@ -19,6 +19,6 @@ namespace MayTheFouthBackend.Application.Dtos
         public float Cargocapacity { get; set; }
         public string Consumables { get; set; } = string.Empty;
         public string Class { get; set; } = string.Empty;
-        public IEnumerable<MoveInfoDto> Movies { get; set; } = Enumerable.Empty<MoveInfoDto>();
+        public IEnumerable<ListInfoDto> Movies { get; set; } = Enumerable.Empty<ListInfoDto>();
     }
 }
