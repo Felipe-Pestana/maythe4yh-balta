@@ -1,6 +1,7 @@
 ﻿using MayTheFouthBackend.Domain.Entities;
 using MayTheFouthBackend.Domain.Interfaces.IRepositories;
 using MayTheFouthBackend.Infra.Data.Contexts;
+using Microsoft.EntityFrameworkCore;
 
 namespace MayTheFouthBackend.Infra.Data.Repositories;
 
@@ -13,8 +14,14 @@ public class MovieRepository : BaseRepository<Movie>, IMoviesRepository
         _context = context;
     }
 
-    public Task<Movie> GetMoviesByIdWithInfoAsync(int id)
+    public async Task<Movie> GetMoviesByIdWithInfoAsync(int id)
     {
-        throw new NotImplementedException();
+        return await _context.Movies
+                        .AsNoTracking()
+                        .Include(x => x.Planets)
+                        .Include(x => x.Starships)
+                        .Include(x => x.Characters)
+                        .Include(x => x.Vehicles)
+                        .FirstOrDefaultAsync(x => x.Id == id); 
     }
 }

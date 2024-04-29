@@ -12,12 +12,14 @@ namespace MayTheFouthBackend.Infra.Data.Contexts
 
         public DbSet<Planet> Planets { get; set; }
         public DbSet<Character> Character { get; set; }
+        public DbSet<Movie> Movies { get; set; }
 
         protected override void OnModelCreating(ModelBuilder mb)
         {
             base.OnModelCreating(mb);
 
             mb.Entity<Planet>().ToTable("Planet"); 
+            mb.Entity<Movie>().ToTable("Movie"); 
             mb.Entity<Character>().ToTable("Character");
         }
     }
