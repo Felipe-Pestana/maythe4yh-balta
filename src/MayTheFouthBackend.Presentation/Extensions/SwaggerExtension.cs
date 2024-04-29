@@ -11,7 +11,7 @@ public static class SwaggerExtension
             options.SwaggerDoc("v1", new OpenApiInfo
             {
                 Version = "v1",
-                Title = "May The Fourth Backend",
+                Title = "May The Fourth Backend \n Time: Galatic Empire",
                 Description = "Challeng Backend code for Star wors Day",
             });
         });

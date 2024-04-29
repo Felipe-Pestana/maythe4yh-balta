@@ -1,4 +1,5 @@
-﻿using MayTheFouthBackend.Application.Features.Movie.GetById;
+﻿using MayTheFouthBackend.Application.Features.Movie.GetAll;
+using MayTheFouthBackend.Application.Features.Movie.GetById;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,16 +12,15 @@ namespace MayTheFouthBackend.Presentation.Extensions
             app.MapGet("/api/v1/moveis", async (int? pageSize, int? currentPage, [FromServices] IMediator mediator) =>
             {
 
-                //var query = new Move
-                //{
+                var query = new MovieGetAllQuery
+                {
+                    CurrentPage = currentPage ?? 0,
+                    PageSize = pageSize ?? 0,
+                };
 
-                //    CurrentPage = currentPage ?? 0,
-                //    PageSize = pageSize ?? 0,
-                //};
+                var result = await mediator.Send(query);
 
-                //var result = await mediator.Send(query);
-
-                //return result == null ? Results.NotFound(result) : Results.Ok(result);
+                return result == null ? Results.NotFound(result) : Results.Ok(result);
 
             }).WithTags("Movie");
 
