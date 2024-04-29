@@ -13,47 +13,52 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 
-namespace MayTheFouthBackend.Infra.IOC.DependencyInjection;
-
-public static class DependencyInjectionExtensions
+namespace MayTheFouthBackend.Infra.IOC.DependencyInjection
 {
-    public static void AddAllServices(this IServiceCollection services, IConfiguration configuration)
+    public static class DependencyInjectionExtensions
     {
-        services.AddDatabaseService(configuration);
-        services.AddRegisterService();
-        services.AddCharacterService();
-        services.AddPlanetService();
-    }
-    public static void AddRegisterService(this IServiceCollection services)
-    {
-        services.AddMediatR(confg => confg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
-        services.AddScoped<IUnitOfWork, UnitOfWork>();
-        services.AddScoped<IPlanetRepository, PlanetRepository>();
-    }
+        public static void AddAllServices(this IServiceCollection services, IConfiguration configuration)
+        {
+            services.AddDatabaseService(configuration);
+            services.AddRegisterService();
+            services.AddCharacterService();
+            services.AddPlanetService();
+            services.AddStarShipService();
+            services.AddVehicleService();
+        }
+        public static void AddRegisterService(this IServiceCollection services)
+        {
+            services.AddMediatR(confg => confg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddScoped<IPlanetRepository, PlanetRepository>();
+            services.AddScoped<IVehicleRepository, VehicleRepository>();
+        }
 
-    public static void AddDatabaseService(this IServiceCollection services, IConfiguration configuration)
-    {
-        var connetionString = configuration.GetConnectionString("DefaultConnection");
-        services.AddDbContext<ApplicationDbContext>(options => options.UseSqlite(connetionString));
+        public static void AddDatabaseService(this IServiceCollection services, IConfiguration configuration)
+        {
+            var connetionString = configuration.GetConnectionString("DefaultConnection");
+            services.AddDbContext<ApplicationDbContext>(options => options.UseSqlite(connetionString));
+        }
+        public static void AddCharacterService(this IServiceCollection services)
+        {
+            services.AddScoped<IRequestHandler<CharacterGetAllQuery, ResponseCharacterGetAll>, CharacterGetAllQueryHandler>();
+            services.AddScoped<IRequestHandler<CharacterGetByIdQuery, ResponseCharacterGetById>, CharacterGetByIdQueryHandler>();
+        }
+        public static void AddPlanetService(this IServiceCollection services)
+        {
+            services.AddScoped<IRequestHandler<PlanetGetAllQuery, ResponsePlanetGetAll>, PlanetGetAllQueryHandler>();
+            services.AddScoped<IRequestHandler<PlanetGetByIdQuery, ResponsePlanetGetById>, PlanetGetByIdQueryHandler>();
+        }
+        public static void AddStarShipService(this IServiceCollection services)
+        {
+            services.AddScoped<IRequestHandler<StarshipGetAllQuery, ResponseStarshipGetAll>, StarshipGetAllQueryHandler>();
+            services.AddScoped<IRequestHandler<StarshipGetByIdQuery, ResponseStarshipGetById>, StarshipGetByIdQueryHandler>();
+
+        }
+        public static void AddVehicleService(this IServiceCollection services)
+        {
+            services.AddScoped<IRequestHandler<VehicleGetAllQuery, ResponseVehicleGetAll>, VehicleGetAllQueryHandler>();
+            services.AddScoped<IRequestHandler<VehicleGetByIdQuery, ResponseVehicleGetById>, VehicleGetByIdQueryHandler>();
+        }
     }
-    public static void AddCharacterService(this IServiceCollection services)
-    {
-        services.AddScoped<IRequestHandler<CharacterGetAllQuery, ResponseCharacterGetAll>, CharacterGetAllQueryHandler>();
-        services.AddScoped<IRequestHandler<CharacterGetByIdQuery, ResponseCharacterGetById>, CharacterGetByIdQueryHandler>();
-    }
-
-    public static void AddPlanetService(this IServiceCollection services)
-    {
-        services.AddScoped<IRequestHandler<PlanetGetAllQuery, ResponsePlanetGetAll>, PlanetGetAllQueryHandler>();
-        services.AddScoped<IRequestHandler<PlanetGetByIdQuery, ResponsePlanetGetById>, PlanetGetByIdQueryHandler>();
-    }
-
-    public static void AddStarShipService(this IServiceCollection services)
-    {
-        services.AddScoped<IRequestHandler<StarshipGetAllQuery, ResponseStarshipGetAll>, StarshipGetAllQueryHandler>();
-        services.AddScoped<IRequestHandler<StarshipGetByIdQuery, ResponseStarshipGetById>, StarshipGetByIdQueryHandler>();
-
-    }
-
-
 }

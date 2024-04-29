@@ -7,6 +7,7 @@ public interface IUnitOfWork
     public IStarshipRepository StarshipRepository { get;}
 
     public ICharacterRepository CharacterRepository { get; }
+    public IVehicleRepository VehicleRepository { get; }
   
     Task Commit(CancellationToken cancellationToken);
 }
