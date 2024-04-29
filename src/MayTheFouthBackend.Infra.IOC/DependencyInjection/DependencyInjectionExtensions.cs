@@ -1,5 +1,6 @@
 using MayTheFouthBackend.Application.Features.Character.GetAll;
 using MayTheFouthBackend.Application.Features.Character.GetById;
+using MayTheFouthBackend.Application.Features.Movie.GetById;
 using MayTheFouthBackend.Application.Features.Planet.GetAll;
 using MayTheFouthBackend.Application.Features.Planet.GetById;
 using MayTheFouthBackend.Application.Features.Starship.GetAll;
@@ -54,6 +55,8 @@ public static class DependencyInjectionExtensions
         services.AddScoped<IRequestHandler<StarshipGetByIdQuery, ResponseStarshipGetById>, StarshipGetByIdQueryHandler>();
 
     }
-
-
+    public static void AddMovieService(this IServiceCollection services)
+    {
+        services.AddScoped<IRequestHandler<MovieGetByIdQuery, ResponseMovieGetById>, MovieGetByIdQueryHandler>();
+    }
 }
