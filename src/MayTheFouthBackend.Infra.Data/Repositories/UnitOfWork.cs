@@ -9,6 +9,7 @@ public class UnitOfWork : IUnitOfWork
     private IStarshipRepository _starshipRepository;
     private ICharacterRepository _characterRepository;
     private IMoviesRepository _moviesRepository;
+    private IVehicleRepository _vehicleRepository;
 
     private readonly ApplicationDbContext _context;
 
@@ -21,6 +22,7 @@ public class UnitOfWork : IUnitOfWork
     public IStarshipRepository StarshipRepository => _starshipRepository ?? new StarshipRepository(_context);
     public ICharacterRepository CharacterRepository => _characterRepository ?? new CharacterRepository(_context);
     public IMoviesRepository MoviesRepository => _moviesRepository ?? new MovieRepository(_context);
+    public IVehicleRepository VehicleRepository => _vehicleRepository ?? new VehicleRepository(_context);
 
     public async Task Commit(CancellationToken cancellationToken)
     {

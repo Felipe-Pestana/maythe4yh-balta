@@ -2,11 +2,6 @@
 using MayTheFouthBackend.Application.Mappins;
 using MayTheFouthBackend.Domain.Interfaces.IRepositories;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MayTheFouthBackend.Application.Features.Starship.GetAll
 {
@@ -33,12 +28,12 @@ namespace MayTheFouthBackend.Application.Features.Starship.GetAll
                 var resultDto = result.MapToIEnumerableVehicleDto();
 
                 return new ResponseVehicleGetAll("Listagem de veículos existente", resultDto.ToPaginationList(request.CurrentPage, request.PageSize));
-            } 
+            }
             catch (Exception ex)
             {
                 return new ResponseVehicleGetAll("Erro no servidor.", 500);
             }
         }
     }
-   
+
 }

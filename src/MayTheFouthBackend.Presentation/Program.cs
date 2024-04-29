@@ -12,6 +12,7 @@ builder.Services.AddRegisterService();
 builder.Services.AddDatabaseService(builder.Configuration);
 builder.Services.AddPlanetService();
 builder.Services.AddMovieService();
+builder.Services.AddVehicleService(); 
 
 var app = builder.Build();
 
@@ -19,11 +20,11 @@ app.useSwaggerApp();
 
 app.UseHttpsRedirection();
 
-
 app.MapPlanetEndpoint();
 app.MapStarshipEndpoint();
 app.MapCharacterEndpoint();
 app.MapMovieEndpoint();
+app.MapVehicleEndpoint(); 
 
 
 app.Run();

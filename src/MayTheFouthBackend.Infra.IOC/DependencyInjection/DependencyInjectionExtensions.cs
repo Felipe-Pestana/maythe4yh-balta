@@ -1,5 +1,6 @@
 using MayTheFouthBackend.Application.Features.Character.GetAll;
 using MayTheFouthBackend.Application.Features.Character.GetById;
+using MayTheFouthBackend.Application.Features.Movie.GetAll;
 using MayTheFouthBackend.Application.Features.Movie.GetById;
 using MayTheFouthBackend.Application.Features.Planet.GetAll;
 using MayTheFouthBackend.Application.Features.Planet.GetById;
@@ -58,5 +59,12 @@ public static class DependencyInjectionExtensions
     public static void AddMovieService(this IServiceCollection services)
     {
         services.AddScoped<IRequestHandler<MovieGetByIdQuery, ResponseMovieGetById>, MovieGetByIdQueryHandler>();
+        services.AddScoped<IRequestHandler<MovieGetAllQuery, ResponseMovieGetAll>, MovieGetAllQueryHandler>();
+    }
+
+    public static void AddVehicleService(this IServiceCollection services)
+    {
+        services.AddScoped<IRequestHandler<VehicleGetByIdQuery, ResponseVehicleGetById>, VehicleGetByIdQueryHandler>();
+        services.AddScoped<IRequestHandler<VehicleGetAllQuery, ResponseVehicleGetAll>, VehicleGetAllQueryHandler>();
     }
 }
