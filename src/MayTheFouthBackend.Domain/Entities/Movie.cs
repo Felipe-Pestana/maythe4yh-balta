@@ -5,7 +5,7 @@
 
         private List<Character> _characteres;
         private List<Planet> _planets;
-        private List<int> _vehicles;
+        private List<Vehicle> _vehicles;
         private List<Starship> _starships;
 
         public string Title { get; private set; }
@@ -18,7 +18,7 @@
         public DateTime Edited { get; private set; }
         public IReadOnlyCollection<Starship> Starships { get =>_starships;}
         public IReadOnlyCollection<Planet> Planets { get =>_planets;}
-        public IReadOnlyCollection<int> Vehicles { get =>_vehicles;}
+        public IReadOnlyCollection<Vehicle> Vehicles { get =>_vehicles;}
         public IReadOnlyCollection<Character> Characters { get =>_characteres;}
 
 
