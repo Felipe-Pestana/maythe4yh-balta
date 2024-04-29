@@ -5,7 +5,7 @@ namespace MayTheFouthBackend.Infra.Data.Contexts
 {
     public class ApplicationDbContext : DbContext
     {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) 
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
         }
@@ -22,6 +22,7 @@ namespace MayTheFouthBackend.Infra.Data.Contexts
             mb.Entity<Planet>().ToTable("Planet"); 
             mb.Entity<Movie>().ToTable("Movie"); 
             mb.Entity<Character>().ToTable("Character");
+            mb.Entity<Vehicle>().ToTable("Vehicle").Property(x=>x.CostInCredits).HasColumnName("cost_in_credits");
         }
     }
 }

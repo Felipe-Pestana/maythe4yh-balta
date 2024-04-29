@@ -1,3 +1,4 @@
+
 using MayTheFouthBackend.Infra.IOC.DependencyInjection;
 using MayTheFouthBackend.Presentation.Extensions;
 
@@ -28,4 +29,3 @@ app.MapVehicleEndpoint();
 
 
 app.Run();
-

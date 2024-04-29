@@ -43,5 +43,4 @@ public class Planet : Entity
 
     public void AddCharacter(Character character) => _characteres.Add(character);
     public void AddMoveis(Movie move) => _movies.Add(move);
-
 }
