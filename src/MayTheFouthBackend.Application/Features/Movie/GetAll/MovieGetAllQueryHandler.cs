@@ -16,7 +16,7 @@ public sealed class MovieGetAllQueryHandler : IRequestHandler<MovieGetAllQuery, 
     {
         try
         {
-            var resultEntity = await _unitOfWork.MoviesRepository.GetAllAsync();
+            var resultEntity = await _unitOfWork.MovieRepository.GetAllAsync();
 
             if (!resultEntity.Any())
                 return new ResponseMovieGetAll("Não existe qual quer Filme Registado!", 400);

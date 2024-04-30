@@ -9,12 +9,7 @@ builder.Services.AddEndpointsApiExplorer();
 
 builder.AddSwaggerGenService();
 
-builder.Services.AddRegisterService();
-builder.Services.AddDatabaseService(builder.Configuration);
-builder.Services.AddPlanetService();
-builder.Services.AddMovieService();
-builder.Services.AddVehicleService();
-builder.Services.AddChapterService(); 
+builder.Services.AddAllServices(builder.Configuration);
 
 var app = builder.Build();
 

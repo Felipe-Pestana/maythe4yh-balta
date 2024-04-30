@@ -9,7 +9,20 @@ namespace MayTheFouthBackend.Application.Mappers
         {
             return new StarshipDto
             {
-
+                Name = starship.Name,
+                Model = starship.Model,
+                Manufacturer = starship.Manufacturer,
+                CostInCredits = starship.CostInCredits,
+                Length = starship.Length,
+                Maxspeed = starship.Maxspeed,
+                Crew = starship.Crew,
+                Passengers = starship.Passengers,
+                Cargocapacity = starship.Cargocapacity,
+                HyperDriveRating = starship.HyperDriveRating,
+                MGLT = starship.MGLT,
+                Consumables = starship.Consumables,
+                Class = starship.Class,
+                Movies = starship.Movies?.Select(x => new ListInfoDto { Id = x.Id, Title = x.Title })
             };
         }
 

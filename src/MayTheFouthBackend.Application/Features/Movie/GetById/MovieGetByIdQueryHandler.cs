@@ -16,7 +16,7 @@ public sealed class MovieGetByIdQueryHandler : IRequestHandler<MovieGetByIdQuery
     {
         try
         {
-            var result = await _unitOfWork.MoviesRepository.GetMoviesByIdWithInfoAsync(request.Id);
+            var result = await _unitOfWork.MovieRepository.GetMoviesByIdWithInfoAsync(request.Id);
 
             if (result is null)
                 return new ResponseMovieGetById("não foi encontrado filme com esse Id", 400);

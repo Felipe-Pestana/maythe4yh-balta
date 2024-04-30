@@ -72,6 +72,9 @@ namespace MayTheFouthBackend.Infra.Data.Contexts
             mb.Entity<Character>()
                 .ToTable("Character");
 
+            mb.Entity<Starship>()
+                .ToTable("Starship");
+
             mb.Entity<Vehicle>()
                 .ToTable("Vehicle");
         }
