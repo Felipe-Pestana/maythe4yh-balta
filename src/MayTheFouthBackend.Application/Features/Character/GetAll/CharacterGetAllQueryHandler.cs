@@ -1,6 +1,4 @@
-﻿using MayTheFouthBackend.Application.Features.Planet.GetAll;
-using MayTheFouthBackend.Application.Mappers;
-using MayTheFouthBackend.Application.Mappins;
+﻿using MayTheFouthBackend.Application.Mappers;
 using MayTheFouthBackend.Domain.Interfaces.IRepositories;
 using MediatR;
 
@@ -29,7 +27,7 @@ public class CharacterGetAllQueryHandler : IRequestHandler<CharacterGetAllQuery,
         }
         catch (Exception ex)
         {
-            return new ResponseCharacterGetAll("Erro interno do servidor", 500);
+            return new ResponseCharacterGetAll(ex.Message, 500);
         }
     }
 }

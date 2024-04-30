@@ -19,10 +19,24 @@ namespace MayTheFouthBackend.Infra.Data.Contexts
         {
             base.OnModelCreating(mb);
 
-            mb.Entity<Planet>().ToTable("Planet"); 
-            mb.Entity<Movie>().ToTable("Movie"); 
-            mb.Entity<Character>().ToTable("Character");
-            mb.Entity<Vehicle>().ToTable("Vehicle").Property(x=>x.CostInCredits).HasColumnName("cost_in_credits");
+            mb.Entity<Planet>()
+                .ToTable("Planet"); 
+
+            mb.Entity<Movie>()
+                .ToTable("Movie"); 
+
+            mb.Entity<Character>()
+                .ToTable("Character")
+                .Property(x=>x.BirthYear)
+                .HasColumnName("Birth_year");
+            mb.Entity<Character>()
+                .Property(x => x.PlanetId)
+                .HasColumnName("Id_planet"); 
+
+            mb.Entity<Vehicle>()
+                .ToTable("Vehicle")
+                .Property(x=>x.CostInCredits)
+                .HasColumnName("cost_in_credits");
         }
     }
 }
