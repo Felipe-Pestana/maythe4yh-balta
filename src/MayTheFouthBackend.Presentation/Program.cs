@@ -13,7 +13,8 @@ builder.Services.AddRegisterService();
 builder.Services.AddDatabaseService(builder.Configuration);
 builder.Services.AddPlanetService();
 builder.Services.AddMovieService();
-builder.Services.AddVehicleService(); 
+builder.Services.AddVehicleService();
+builder.Services.AddChapterService(); 
 
 var app = builder.Build();
 
