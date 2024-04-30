@@ -43,7 +43,7 @@ public class Character : Entity
     public string Gender { get; private set; }
     public Planet Homeworld { get; private set; }
     public int PlanetId { get; private set; }
-    public IReadOnlyCollection<Movie> Movies { get => _movies;  }
+    public ICollection<Movie> Movies { get => _movies;  }
 
     public void AddMovies(Movie move) => _movies.Add(move);
 }

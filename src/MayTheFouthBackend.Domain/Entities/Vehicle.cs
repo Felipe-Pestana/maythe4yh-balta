@@ -47,7 +47,7 @@
         public string Consumables { get; private set; }
         public string Class { get; private set; }
 
-        public IReadOnlyCollection<Movie> Movies { get => _movies; }
+        public ICollection<Movie> Movies { get => _movies; }
 
         public void AddMovies(Movie movie) => _movies.Add(movie);
     }

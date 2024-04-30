@@ -4,10 +4,10 @@ public sealed class MovieDto
 {
     public string Title { get; set; }
     public int Episode { get; set; }
-    public string Opening_crawl { get; set; } = string.Empty;
+    public string OpeningCrawl { get; set; } = string.Empty;
     public string Director { get; set; } = string.Empty;
     public string Producer { get; set; } = string.Empty;
-    public DateTime Release_date { get; set; }
+    public DateTime ReleaseDate { get; set; }
     public DateTime Created { get; set; }
     public DateTime Edited { get; set; }
     public IEnumerable<ListInfoDto> Starships { get; set; } = Enumerable.Empty<ListInfoDto>();
