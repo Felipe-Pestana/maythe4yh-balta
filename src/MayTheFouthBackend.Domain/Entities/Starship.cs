@@ -11,7 +11,7 @@
             float length,
             int maxspeed,
             int crew,
-            int passagers,
+            int passengers,
             float cargocapacity,
             int hyperDriveRating,
             int mglt,
@@ -25,7 +25,7 @@
             Length = length;
             Maxspeed = maxspeed;
             Crew = crew;
-            Passagers = passagers;
+            Passengers = passengers;
             Cargocapacity = cargocapacity;
             HyperDriveRating = hyperDriveRating;
             MGLT = mglt;
@@ -46,7 +46,7 @@
         public float Length { get; private set; }
         public int Maxspeed { get; private set; }
         public int Crew { get; private set; }
-        public int Passagers { get; private set; }
+        public int Passengers { get; private set; }
         public float Cargocapacity { get; private set; }
         public int HyperDriveRating { get; private set; }
         public int MGLT { get; private set; }

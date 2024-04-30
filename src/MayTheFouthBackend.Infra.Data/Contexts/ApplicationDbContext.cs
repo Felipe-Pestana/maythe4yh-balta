@@ -31,7 +31,7 @@ namespace MayTheFouthBackend.Infra.Data.Contexts
                 {
                     j.ToTable("MovieCharacter");
 
-                    j.HasOne<Movie>().WithMany().HasForeignKey("MovieId");
+                    j.HasOne<Movie>().WithMany().HasForeignKey("MoviesId");
                     j.HasOne<Character>().WithMany().HasForeignKey("CharacterId");
                 });
 
@@ -43,7 +43,7 @@ namespace MayTheFouthBackend.Infra.Data.Contexts
                 {
                     j.ToTable("MoviePlanet");
 
-                    j.HasOne<Movie>().WithMany().HasForeignKey("MovieId");
+                    j.HasOne<Movie>().WithMany().HasForeignKey("MoviesId");
                     j.HasOne<Planet>().WithMany().HasForeignKey("PlanetId");
                 });
 
@@ -54,7 +54,7 @@ namespace MayTheFouthBackend.Infra.Data.Contexts
                 {
                     j.ToTable("MovieStarship");
 
-                    j.HasOne<Movie>().WithMany().HasForeignKey("MovieId");
+                    j.HasOne<Movie>().WithMany().HasForeignKey("MoviesId");
                     j.HasOne<Starship>().WithMany().HasForeignKey("StarshipId");
                 });
 
@@ -65,7 +65,7 @@ namespace MayTheFouthBackend.Infra.Data.Contexts
                 {
                     j.ToTable("MovieVehicle");
 
-                    j.HasOne<Movie>().WithMany().HasForeignKey("MovieId");
+                    j.HasOne<Movie>().WithMany().HasForeignKey("MoviesId");
                     j.HasOne<Vehicle>().WithMany().HasForeignKey("VehicleId");
                 });
 

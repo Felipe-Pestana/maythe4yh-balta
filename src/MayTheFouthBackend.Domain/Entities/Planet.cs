@@ -2,8 +2,8 @@
 
 public class Planet : Entity
 {
-    private List<Character> _characteres;
-    private List<Movie> _movies;
+    private List<Character> _characteres = new();
+    private List<Movie> _movies = new();
     public Planet(string name,
                 float rotationPeriod,
                 int orbitalPeriod,
@@ -24,8 +24,6 @@ public class Planet : Entity
         SurfaceWater = surfaceWater;
         Population = population;
 
-        _movies = new List<Movie>();
-        _characteres = new List<Character>();
     }
     private Planet()
     {

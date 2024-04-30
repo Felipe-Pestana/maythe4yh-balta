@@ -1,12 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace MayTheFouthBackend.Application.Dtos
 {
-    public class VehicleDto
+    public sealed class VehicleDto
     {
         public string Name { get; set; } = string.Empty;
         public string Model { get; set; } = string.Empty;

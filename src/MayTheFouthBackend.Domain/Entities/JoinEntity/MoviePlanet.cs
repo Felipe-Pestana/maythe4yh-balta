@@ -2,7 +2,7 @@
 {
     public sealed class MoviePlanet
     {
-        public int MovieId { get; set; }
+        public int MoviesId { get; set; }
         public Movie Movie { get; set; }
 
         public int PlanetId { get; set; }

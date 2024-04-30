@@ -2,7 +2,7 @@
 {
     public class Vehicle : Entity
     {
-        private List<Movie> _movies;
+        private List<Movie> _movies = new();
 
         public Vehicle(string name,
             string model,
@@ -27,8 +27,6 @@
             Cargocapacity = cargocapacity;
             Consumables = consumables;
             Class = @class;
-
-            _movies = new List<Movie>();
         }
         private Vehicle()
         {

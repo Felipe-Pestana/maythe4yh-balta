@@ -2,17 +2,16 @@
 
 public class Character : Entity
 {
-    private List<Movie> _movies;
+    private List<Movie> _movies = new();
     public Character(string name,
-                string height,
-                string weight,
+                float height,
+                float weight,
                 string hairColor,
                 string skinColor,
                 string eyeColor,
-                string birthYear,
+                int birthYear,
                 string gender,
                 int planetId
-
               )
     {
         Name = name;
@@ -24,8 +23,6 @@ public class Character : Entity
         BirthYear = birthYear;
         Gender = gender;
         PlanetId = planetId;
-
-        _movies = new List<Movie>();
     }
 
     private Character()
@@ -34,15 +31,16 @@ public class Character : Entity
     }
 
     public string Name { get; private set; }
-    public string Height { get; private set; }
-    public string Weight { get; private set; }
+    public float Height { get; private set; }
+    public float Weight { get; private set; }
     public string HairColor { get; private set; }
     public string SkinColor { get; private set; }
     public string EyeColor { get; private set; }
-    public string BirthYear { get; private set; }
+    public int BirthYear { get; private set; }
     public string Gender { get; private set; }
-    public Planet Homeworld { get; private set; }
     public int PlanetId { get; private set; }
+    public Planet Homeworld { get; private set; }
+
     public ICollection<Movie> Movies { get => _movies;  }
 
     public void AddMovies(Movie move) => _movies.Add(move);

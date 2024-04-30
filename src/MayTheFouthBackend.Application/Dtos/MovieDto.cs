@@ -2,7 +2,7 @@
 
 public sealed class MovieDto
 {
-    public string Title { get; set; }
+    public string Title { get; set; } = string.Empty;
     public int Episode { get; set; }
     public string OpeningCrawl { get; set; } = string.Empty;
     public string Director { get; set; } = string.Empty;
