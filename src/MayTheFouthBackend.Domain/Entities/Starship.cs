@@ -8,7 +8,7 @@ namespace MayTheFouthBackend.Domain.Entities
 {
     public class Starship : Entity
     {
-        private List<int> _movies;
+        private List<Movie> _movies;
 
         public Starship(string name, 
             string model, 
@@ -38,7 +38,11 @@ namespace MayTheFouthBackend.Domain.Entities
             Consumables = consumables;
             Class = @class;
 
-            _movies = new List<int>();
+            _movies = new List<Movie>();
+        }
+        private Starship()
+        {
+            
         }
 
         public string Name { get; private set; }
@@ -55,8 +59,8 @@ namespace MayTheFouthBackend.Domain.Entities
         public string Consumables { get; private set; }
         public string Class {  get; private set; }
 
-        public IReadOnlyCollection<int> Movies { get => _movies; }
+        public IReadOnlyCollection<Movie> Movies { get => _movies; }
 
-        public void AddMovies(int movie) => _movies.Add(movie);
+        public void AddMovies(Movie movie) => _movies.Add(movie);
     }
 }

@@ -27,6 +27,10 @@ public class Planet : Entity
         _movies = new List<Movie>();
         _characteres = new List<Character>();
     }
+    private Planet()
+    {
+        
+    }
 
     public string Name { get; private set; }
     public float RotationPeriod { get; private set; }

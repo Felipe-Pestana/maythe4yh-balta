@@ -28,6 +28,7 @@ namespace MayTheFouthBackend.Application.Features.Starship.GetAll
                 var resultDto = result.MapToIEnumerableVehicleDto();
 
                 return new ResponseVehicleGetAll("Listagem de veículos existente", resultDto.ToPaginationList(request.CurrentPage, request.PageSize));
+            }
 
             catch (Exception ex)
             {

@@ -42,6 +42,10 @@
             _starships = new();
             _vehicles = new();
         }
+        private Movie()
+        {
+            
+        }
     }
 }
 

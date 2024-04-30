@@ -28,6 +28,11 @@ public class Character : Entity
         _movies = new List<Movie>();
     }
 
+    private Character()
+    {
+        
+    }
+
     public string Name { get; private set; }
     public string Height { get; private set; }
     public string Weight { get; private set; }
