@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace MayTheFouthBackend.Infra.Data.Repositories;
 
-public class MovieRepository : BaseRepository<Movie>, IMoviesRepository
+public class MovieRepository : BaseRepository<Movie>, IMovieRepository
 {
     private ApplicationDbContext _context;
     public MovieRepository(ApplicationDbContext context)

@@ -25,13 +25,20 @@ public static class DependencyInjectionExtensions
         services.AddDatabaseService(configuration);
         services.AddRegisterService();
         services.AddCharacterService();
-        services.AddPlanetService();
+        services.AddPlanetService();        
+        services.AddStarShipService();
+        services.AddVehicleService();
+        services.AddMovieService();
     }
     public static void AddRegisterService(this IServiceCollection services)
     {
         services.AddMediatR(confg => confg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
         services.AddScoped<IUnitOfWork, UnitOfWork>();
         services.AddScoped<IPlanetRepository, PlanetRepository>();
+        services.AddScoped<IMovieRepository, MovieRepository>();
+        services.AddScoped<ICharacterRepository, CharacterRepository>();
+        services.AddScoped<IStarshipRepository, StarshipRepository>();
+        services.AddScoped<IVehicleRepository, VehicleRepository>();
     }
 
     public static void AddDatabaseService(this IServiceCollection services, IConfiguration configuration)
