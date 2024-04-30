@@ -67,5 +67,10 @@ public static class DependencyInjectionExtensions
     {
         services.AddScoped<IRequestHandler<VehicleGetByIdQuery, ResponseVehicleGetById>, VehicleGetByIdQueryHandler>();
         services.AddScoped<IRequestHandler<VehicleGetAllQuery, ResponseVehicleGetAll>, VehicleGetAllQueryHandler>();
+    }    
+    public static void AddChapterService(this IServiceCollection services)
+    {
+        services.AddScoped<IRequestHandler<CharacterGetByIdQuery, ResponseCharacterGetById>, CharacterGetByIdQueryHandler>();
+        services.AddScoped<IRequestHandler<CharacterGetAllQuery, ResponseCharacterGetAll>, CharacterGetAllQueryHandler>();
     }
 }

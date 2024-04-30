@@ -15,12 +15,12 @@ public static class MovieMapper
             Edited = movie.Edited,
             Episode = movie.Episode,
             Producer = movie.Producer,
-            Release_date = movie.Release_date,
-            Opening_crawl = movie.Opening_crawl,
-            Planets = movie.Planets.Select(p => new ListInfoDto { Id = p.Id, Title = p.Name }),
-            Characters = movie.Characters.Select(p => new ListInfoDto { Id = p.Id, Title = p.Name }),
-            Starships = movie.Starships.Select(p => new ListInfoDto { Id = p.Id, Title = p.Name }),
-            Vehicles = movie.Vehicles.Select(p => new ListInfoDto { })
+            ReleaseDate = movie.ReleaseDate,
+            OpeningCrawl = movie.OpeningCrawl,
+            Planets = movie.Planets?.Select(p => new ListInfoDto { Id = p.Id, Title = p.Name }),
+            Characters = movie.Characters?.Select(p => new ListInfoDto { Id = p.Id, Title = p.Name }),
+            Starships = movie.Starships?.Select(p => new ListInfoDto { Id = p.Id, Title = p.Name }),
+            Vehicles = movie.Vehicles?.Select(p => new ListInfoDto { Id = p.Id, Title = p.Name})
 
         }; 
     }

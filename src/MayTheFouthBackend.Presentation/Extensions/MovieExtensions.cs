@@ -9,13 +9,13 @@ namespace MayTheFouthBackend.Presentation.Extensions
     {
         public static void MapMovieEndpoint(this WebApplication app)
         {
-            app.MapGet("/api/v1/moveis", async (int? pageSize, int? currentPage, [FromServices] IMediator mediator) =>
+            app.MapGet("/api/v1/moveis", async ([FromServices] IMediator mediator, int currentPage = 1, int pageSize = 10) =>
             {
 
                 var query = new MovieGetAllQuery
                 {
-                    CurrentPage = currentPage ?? 0,
-                    PageSize = pageSize ?? 0,
+                    CurrentPage = currentPage,
+                    PageSize = pageSize,
                 };
 
                 var result = await mediator.Send(query);

@@ -1,27 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MayTheFouthBackend.Domain.Entities
+﻿namespace MayTheFouthBackend.Domain.Entities
 {
     public class Starship : Entity
     {
-        private List<int> _movies;
+        private List<Movie> _movies;
 
-        public Starship(string name, 
-            string model, 
-            string manufacturer, 
-            float costInCredits, 
-            float length, 
-            int maxspeed, 
-            int crew, 
-            int passagers, 
-            float cargocapacity, 
-            int hyperDriveRating, 
-            int mglt, 
-            string consumables, 
+        public Starship(string name,
+            string model,
+            string manufacturer,
+            float costInCredits,
+            float length,
+            int maxspeed,
+            int crew,
+            int passengers,
+            float cargocapacity,
+            int hyperDriveRating,
+            int mglt,
+            string consumables,
             string @class)
         {
             Name = name;
@@ -29,34 +23,38 @@ namespace MayTheFouthBackend.Domain.Entities
             Manufacturer = manufacturer;
             CostInCredits = costInCredits;
             Length = length;
-            this.maxspeed = maxspeed;
+            Maxspeed = maxspeed;
             Crew = crew;
-            Passagers = passagers;
+            Passengers = passengers;
             Cargocapacity = cargocapacity;
-            this.hyperDriveRating = hyperDriveRating;
+            HyperDriveRating = hyperDriveRating;
             MGLT = mglt;
             Consumables = consumables;
             Class = @class;
 
-            _movies = new List<int>();
+            _movies = new List<Movie>();
+        }
+        private Starship()
+        {
+
         }
 
         public string Name { get; private set; }
         public string Model { get; private set; }
         public string Manufacturer { get; private set; }
         public float CostInCredits { get; private set; }
-        public float Length {  get; private set; }
-        public int maxspeed { get; private set; }
-        public int Crew {  get; private set; }
-        public int Passagers { get; private set; }
+        public float Length { get; private set; }
+        public int Maxspeed { get; private set; }
+        public int Crew { get; private set; }
+        public int Passengers { get; private set; }
         public float Cargocapacity { get; private set; }
-        public int hyperDriveRating { get; private set; }
-        public int MGLT {  get; private set; }
+        public int HyperDriveRating { get; private set; }
+        public int MGLT { get; private set; }
         public string Consumables { get; private set; }
-        public string Class {  get; private set; }
+        public string Class { get; private set; }
 
-        public IReadOnlyCollection<int> Movies { get => _movies; }
+        public ICollection<Movie> Movies { get => _movies; }
 
-        public void AddMovies(int movie) => _movies.Add(movie);
+        public void AddMovies(Movie movie) => _movies.Add(movie);
     }
 }

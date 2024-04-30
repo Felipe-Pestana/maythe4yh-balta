@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MayTheFouthBackend.Domain.Entities
+﻿namespace MayTheFouthBackend.Domain.Entities
 {
     public class Vehicle : Entity
     {
-        private List<Movie> _movies;
+        private List<Movie> _movies = new();
 
         public Vehicle(string name,
             string model,
@@ -30,11 +24,13 @@ namespace MayTheFouthBackend.Domain.Entities
             Maxspeed = maxspeed;
             Crew = crew;
             Passengers = passengers;
-            Cargocapacity = cargocapacity;            
+            Cargocapacity = cargocapacity;
             Consumables = consumables;
             Class = @class;
+        }
+        private Vehicle()
+        {
 
-            _movies = new List<Movie>();
         }
 
         public string Name { get; private set; }
@@ -45,11 +41,11 @@ namespace MayTheFouthBackend.Domain.Entities
         public int Maxspeed { get; private set; }
         public int Crew { get; private set; }
         public int Passengers { get; private set; }
-        public float Cargocapacity { get; private set; }        
+        public float Cargocapacity { get; private set; }
         public string Consumables { get; private set; }
         public string Class { get; private set; }
 
-        public IReadOnlyCollection<Movie> Movies { get => _movies; }
+        public ICollection<Movie> Movies { get => _movies; }
 
         public void AddMovies(Movie movie) => _movies.Add(movie);
     }
