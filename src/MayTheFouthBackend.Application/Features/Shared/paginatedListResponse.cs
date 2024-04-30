@@ -10,7 +10,7 @@ public class PaginatedListResponse<T> where T : class
     public PaginatedListResponse(IEnumerable<T> items, int totalItems, int currentPage, int pageSize)
     {
         CurrentPage = currentPage;
-        TotalPage = totalItems;
+        TotalItems = totalItems;
         TotalPage = (int)Math.Ceiling(totalItems /(double) pageSize);
         Result = items; 
     }
