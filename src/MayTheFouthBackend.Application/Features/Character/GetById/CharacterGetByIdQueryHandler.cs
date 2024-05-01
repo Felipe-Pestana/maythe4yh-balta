@@ -15,7 +15,7 @@ public class CharacterGetByIdQueryHandler : IRequestHandler<CharacterGetByIdQuer
     {
         try
         {
-            var result = await _uow.CharacterRepository.GetByIdAsync(request.Id);
+            var result = await _uow.CharacterRepository.GetCharacterByIdWithInfoAsync(request.Id);
 
             if (result == null)
                 return new ResponseCharacterGetById("Personagem não encontrado", 404);

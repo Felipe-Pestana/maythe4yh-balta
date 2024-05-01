@@ -9,5 +9,7 @@ namespace MayTheFouthBackend.Domain.Interfaces.IRepositories
 {
     public interface IStarshipRepository : IBaseRepository<Starship>
     {
+        Task<IEnumerable<Starship>> GetAllStarshipWhithInfosAsync();
+        Task<Starship> GetStarshipWithInfoAsync(int id); 
     }
 }

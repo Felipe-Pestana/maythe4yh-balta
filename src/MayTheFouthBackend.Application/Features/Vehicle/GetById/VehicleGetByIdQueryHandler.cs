@@ -23,7 +23,7 @@ namespace MayTheFouthBackend.Application.Features.Starship.GetById
         {
             try
             {
-                var result = await _uow.VehicleRepository.GetByIdAsync(request.Id);
+                var result = await _uow.VehicleRepository.GetVehicleWithInfoById(request.Id);
 
                 if (result == null)
                 {

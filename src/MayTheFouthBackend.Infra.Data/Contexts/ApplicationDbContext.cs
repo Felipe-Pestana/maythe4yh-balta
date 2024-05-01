@@ -15,6 +15,7 @@ namespace MayTheFouthBackend.Infra.Data.Contexts
         public DbSet<Character> Characters { get; set; }
         public DbSet<Movie> Movies { get; set; }
         public DbSet<Vehicle> Vehicles { get; set; }
+        public DbSet<Starship> Starships { get; set; }
 
         protected override void OnModelCreating(ModelBuilder mb)
         {

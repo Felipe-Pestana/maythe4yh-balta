@@ -5,5 +5,6 @@ namespace MayTheFouthBackend.Domain.Interfaces.IRepositories;
 public interface IPlanetRepository 
     : IBaseRepository<Planet>
 {
-    Task<Planet> GetPlanetWithInfo(int id); 
+    Task<IEnumerable<Planet>> GetAllPlanetWhithInfosAsync();
+    Task<Planet> GetPlanetWithInfoAsync(int id); 
 }

@@ -17,7 +17,7 @@ public class PlanetGetAllQueryHandler : IRequestHandler<PlanetGetAllQuery, Respo
     {
         try
         {
-            var resultEntity = await _uow.PlanetRepository.GetAllAsync();
+            var resultEntity = await _uow.PlanetRepository.GetAllPlanetWhithInfosAsync();
 
             if (!resultEntity.Any())
                 return new ResponsePlanetGetAll("Não existe qual quer Planeta Registado!", 400);
