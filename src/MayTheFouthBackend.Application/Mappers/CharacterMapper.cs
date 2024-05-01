@@ -15,7 +15,7 @@ public static class CharacterMapper
             Gender = character.Gender,
             HairColor = character.HairColor,
             Height = character.Height,
-            Homeworld = character.Homeworld,
+            Planet = new ListInfoDto { Id = character.Homeworld.Id, Title = character.Homeworld.Name}, 
             PlanetId = character.PlanetId,
             SkinColor = character.SkinColor,
             Weight = character.Weight,

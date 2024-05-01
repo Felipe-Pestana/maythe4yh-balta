@@ -1,11 +1,6 @@
 ﻿using MayTheFouthBackend.Application.Mappers;
 using MayTheFouthBackend.Domain.Interfaces.IRepositories;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MayTheFouthBackend.Application.Features.Starship.GetById
 {
@@ -22,7 +17,7 @@ namespace MayTheFouthBackend.Application.Features.Starship.GetById
         {
             try
             {
-                var result = await _uow.StarshipRepository.GetByIdAsync(request.Id);
+                var result = await _uow.StarshipRepository.GetStarshipWithInfoAsync(request.Id);
 
                 if (result == null)
                 {
@@ -32,7 +27,7 @@ namespace MayTheFouthBackend.Application.Features.Starship.GetById
                 return new ResponseStarshipGetById("Nave encontrada com sucesso.", starshipDto);
 
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return new ResponseStarshipGetById(ex.Message, 500);
             }

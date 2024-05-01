@@ -18,7 +18,7 @@ namespace MayTheFouthBackend.Application.Features.Starship.GetAll
         {
             try
             {
-                var result = await _uow.StarshipRepository.GetAllAsync();
+                var result = await _uow.StarshipRepository.GetAllStarshipWhithInfosAsync();
 
                 if (!result.Any())
                 {

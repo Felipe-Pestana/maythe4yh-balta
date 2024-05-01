@@ -10,5 +10,6 @@ namespace MayTheFouthBackend.Domain.Interfaces.IRepositories
     public interface IVehicleRepository : IBaseRepository<Vehicle>
     {
         Task<Vehicle> GetVehicleWithInfoById(int id);
+        Task<IEnumerable<Vehicle>> GetAllStarshipWhithInfosAsync();
     }
 }

@@ -14,6 +14,17 @@ public class MovieRepository : BaseRepository<Movie>, IMovieRepository
         _context = context;
     }
 
+    public async  Task<IEnumerable<Movie>> GetAllMoviesWithInfoAsync()
+    {
+        return await _context.Movies
+                               .AsNoTracking()
+                               .Include(x => x.Planets)
+                               .Include(x => x.Starships)
+                               .Include(x => x.Characters)
+                               .Include(x => x.Vehicles)
+                               .ToListAsync();
+    }
+
     public async Task<Movie> GetMoviesByIdWithInfoAsync(int id)
     {
         return await _context.Movies

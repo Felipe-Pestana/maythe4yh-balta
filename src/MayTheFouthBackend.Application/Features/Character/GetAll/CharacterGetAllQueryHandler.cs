@@ -15,7 +15,7 @@ public class CharacterGetAllQueryHandler : IRequestHandler<CharacterGetAllQuery,
     {
         try
         {
-            var resultEntity = await _uow.CharacterRepository.GetAllAsync();
+            var resultEntity = await _uow.CharacterRepository.GetAllCharactWhithInfosAsync();
 
             if (!resultEntity.Any())
                 return new ResponseCharacterGetAll("Não existe qual quer Personagem Registado!", 400);

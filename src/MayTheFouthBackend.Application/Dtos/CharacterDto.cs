@@ -14,7 +14,7 @@ public class CharacterDto
     public int BirthYear { get;  set; }
     public string Gender { get; set; } = string.Empty;
     public int PlanetId { get;  set; }
-    public Planet Homeworld { get;  set; }
+    public ListInfoDto Planet { get;  set; }
 
     public IEnumerable<ListInfoDto> Movies { get; set; } = Enumerable.Empty<ListInfoDto>();
 }

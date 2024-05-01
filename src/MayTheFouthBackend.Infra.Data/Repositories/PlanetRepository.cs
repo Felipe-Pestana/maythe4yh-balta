@@ -8,13 +8,23 @@ namespace MayTheFouthBackend.Infra.Data.Repositories;
 public class PlanetRepository : BaseRepository<Planet>, IPlanetRepository
 {
     private readonly ApplicationDbContext _context;
-    public PlanetRepository(ApplicationDbContext context) 
+    public PlanetRepository(ApplicationDbContext context)
         : base(context)
     {
         _context = context;
     }
 
-    public async Task<Planet> GetPlanetWithInfo(int id)
+    public async Task<IEnumerable<Planet>> GetAllPlanetWhithInfosAsync()
+    {
+        return await _context
+              .Planets
+              .AsNoTracking()
+              .Include(x => x.Characters)
+              .Include(x => x.Movies)
+              .ToListAsync();
+    }
+
+    public async Task<Planet> GetPlanetWithInfoAsync(int id)
     {
 
         return await _context
@@ -22,6 +32,6 @@ public class PlanetRepository : BaseRepository<Planet>, IPlanetRepository
                         .AsNoTracking()
                         .Include(x => x.Characters)
                         .Include(x => x.Movies)
-                        .FirstOrDefaultAsync(x => x.Id == id); 
+                        .FirstOrDefaultAsync(x => x.Id == id);
     }
 }
