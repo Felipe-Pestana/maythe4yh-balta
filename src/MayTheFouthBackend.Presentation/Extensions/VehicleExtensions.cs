@@ -9,7 +9,7 @@ namespace MayTheFouthBackend.Presentation.Extensions
     {
         public static void MapVehicleEndpoint(this WebApplication app)
         {
-            app.MapGet("/api/v1/vehicle", async ([FromServices] IMediator mediator, int currentPage = 1, int pageSize = 10) =>
+            app.MapGet("/api/v1/vehicles", async ([FromServices] IMediator mediator, int currentPage = 1, int pageSize = 10) =>
             {
 
                 var query = new VehicleGetAllQuery
@@ -25,7 +25,7 @@ namespace MayTheFouthBackend.Presentation.Extensions
 
             }).WithTags("Vehicle");
 
-            app.MapGet("/api/v1/vehicle/{id:int}", async ([FromServices] IMediator mediator, int id) =>
+            app.MapGet("/api/v1/vehicles/{id:int}", async ([FromServices] IMediator mediator, int id) =>
             {
                 var query = new VehicleGetByIdQuery { Id = id };
                 var result = await mediator.Send(query);

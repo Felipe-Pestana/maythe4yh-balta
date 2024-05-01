@@ -9,7 +9,7 @@ namespace MayTheFouthBackend.Presentation.Extensions
     {
         public static void MapStarshipEndpoint(this WebApplication app)
         {
-            app.MapGet("/api/v1/starship", async ([FromServices] IMediator mediator, int currentPage = 1, int pageSize = 10) =>
+            app.MapGet("/api/v1/starships", async ([FromServices] IMediator mediator, int currentPage = 1, int pageSize = 10) =>
             {
 
                 var query = new StarshipGetAllQuery
@@ -25,7 +25,7 @@ namespace MayTheFouthBackend.Presentation.Extensions
 
             }).WithTags("Starship");
 
-            app.MapGet("/api/v1/starship/{id:int}", async ([FromServices] IMediator mediator, int id) =>
+            app.MapGet("/api/v1/starships/{id:int}", async ([FromServices] IMediator mediator, int id) =>
             {
                 var query = new StarshipGetByIdQuery { Id = id };
                 var result = await mediator.Send(query);

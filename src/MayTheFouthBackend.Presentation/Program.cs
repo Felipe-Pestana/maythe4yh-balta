@@ -11,11 +11,15 @@ builder.AddSwaggerGenService();
 
 builder.Services.AddAllServices(builder.Configuration);
 
+builder.AddCorsPolicy(builder.Configuration);
+
 var app = builder.Build();
 
 app.useSwaggerApp();
 
 app.UseHttpsRedirection();
+
+app.UseCors("AllowSpecificOrigin"); 
 
 app.MapPlanetEndpoint();
 app.MapStarshipEndpoint();

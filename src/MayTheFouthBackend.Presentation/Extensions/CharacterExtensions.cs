@@ -24,7 +24,7 @@ public static class CharacterExtensions
 
         }).WithTags("Character");
 
-        app.MapGet("/api/v1/Character/{id:int}", async ([FromServices] IMediator mediator, int id) =>
+        app.MapGet("/api/v1/Characters/{id:int}", async ([FromServices] IMediator mediator, int id) =>
         {
             var query = new CharacterGetByIdQuery { Id = id };
             var result = await mediator.Send(query);
