@@ -25,7 +25,7 @@ namespace MayTheFouthBackend.Presentation.Extensions
 
             }).WithTags("Planet");
 
-            app.MapGet("/api/v1/planet/{id:int}", async ([FromServices] IMediator mediator, int id) =>
+            app.MapGet("/api/v1/planets/{id:int}", async ([FromServices] IMediator mediator, int id) =>
             {
                 var query = new PlanetGetByIdQuery { Id = id };
                 var result = await mediator.Send(query);

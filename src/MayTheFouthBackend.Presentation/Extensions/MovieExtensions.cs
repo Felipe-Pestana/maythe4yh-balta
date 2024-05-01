@@ -9,7 +9,7 @@ namespace MayTheFouthBackend.Presentation.Extensions
     {
         public static void MapMovieEndpoint(this WebApplication app)
         {
-            app.MapGet("/api/v1/moveis", async ([FromServices] IMediator mediator, int currentPage = 1, int pageSize = 10) =>
+            app.MapGet("/api/v1/movies", async ([FromServices] IMediator mediator, int currentPage = 1, int pageSize = 10) =>
             {
 
                 var query = new MovieGetAllQuery
@@ -24,7 +24,7 @@ namespace MayTheFouthBackend.Presentation.Extensions
 
             }).WithTags("Movie");
 
-            app.MapGet("/api/v1/moveis/{id:int}", async (int id, [FromServices] IMediator mediator) =>
+            app.MapGet("/api/v1/movies/{id:int}", async (int id, [FromServices] IMediator mediator) =>
             {
                 var query = new MovieGetByIdQuery { Id = id };
                 var result = await mediator.Send(query);
