@@ -9,6 +9,7 @@ namespace MayTheFouthBackend.Application.Mappins
         {
             return new PlanetDto
             {
+                Id = planet.Id.ToString(),
                 Name = planet.Name,
                 Climate = planet.Climate,
                 Diameter = planet.Diameter,
@@ -18,8 +19,8 @@ namespace MayTheFouthBackend.Application.Mappins
                 RotationPeriod = planet.RotationPeriod,
                 SurfaceWater = planet.SurfaceWater,
                 Terrain = planet.Terrain,
-                Characters = planet.Characters?.Select(c=> new ListInfoDto { Id = c.Id, Title = c.Name}),
-                Movies = planet.Movies?.Select(x => new ListInfoDto { Id = x.Id, Title = x.Title })
+                Characters = planet.Characters?.Select(c=> new ListInfoDto { Id = c.Id.ToString(), Title = c.Name}),
+                Movies = planet.Movies?.Select(x => new ListInfoDto { Id = x.Id.ToString(), Title = x.Title })
               
             };
         }

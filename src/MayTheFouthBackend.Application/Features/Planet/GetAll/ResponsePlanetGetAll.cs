@@ -14,14 +14,14 @@ namespace MayTheFouthBackend.Application.Features.Planet.GetAll
             Message = message;
             StatusCode = status;
         }
-        public ResponsePlanetGetAll(string message, PaginatedListResponse<PlanetDto> datas)
+        public ResponsePlanetGetAll(string message, PaginatedListResponse<PlanetDto> data)
         {
             Message = message;
-            Datas = datas;
+            Data = data;
             StatusCode = 200;
 
         }
 
-        public PaginatedListResponse<PlanetDto>? Datas { get; set; }
+        public PaginatedListResponse<PlanetDto>? Data { get; set; }
     }
 }

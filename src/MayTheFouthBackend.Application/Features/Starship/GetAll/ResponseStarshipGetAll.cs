@@ -12,13 +12,13 @@ namespace MayTheFouthBackend.Application.Features.Starship.GetAll
             Message = message;
             StatusCode = status;
         }
-        public ResponseStarshipGetAll(string message, PaginatedListResponse<StarshipDto>? datas)
+        public ResponseStarshipGetAll(string message, PaginatedListResponse<StarshipDto>? data)
         {
             Message = message;
-            Datas = datas;
+            Data = data;
             StatusCode = 200;
         }
 
-        public PaginatedListResponse<StarshipDto>? Datas { get; set; }
+        public PaginatedListResponse<StarshipDto>? Data { get; set; }
     }
 }

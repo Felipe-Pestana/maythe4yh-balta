@@ -14,13 +14,13 @@ namespace MayTheFouthBackend.Application.Features.Movie.GetAll
             Message = message;
             StatusCode = status;
         }
-        public ResponseMovieGetAll(string message, PaginatedListResponse<MovieDto>? datas)
+        public ResponseMovieGetAll(string message, PaginatedListResponse<MovieDto>? data)
         {
             Message = message;
-            Datas = datas;
+            Data = data;
             StatusCode = 200; 
         }
 
-        public PaginatedListResponse<MovieDto>? Datas { get; set; }
+        public PaginatedListResponse<MovieDto>? Data { get; set; }
     }
 }

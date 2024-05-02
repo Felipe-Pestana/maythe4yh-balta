@@ -14,13 +14,13 @@ public class ResponseCharacterGetAll: Response
         Message = message;
         StatusCode = status;
     }
-    public ResponseCharacterGetAll(string message, PaginatedListResponse<CharacterDto> datas)
+    public ResponseCharacterGetAll(string message, PaginatedListResponse<CharacterDto> data)
     {
         Message = message;
-        Datas = datas;
+        Data = data;
         StatusCode = 200;
 
     }
 
-    public PaginatedListResponse<CharacterDto>? Datas { get; set; }
+    public PaginatedListResponse<CharacterDto>? Data { get; set; }
 }

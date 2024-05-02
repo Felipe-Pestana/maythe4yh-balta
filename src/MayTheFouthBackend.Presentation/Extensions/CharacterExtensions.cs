@@ -9,12 +9,12 @@ public static class CharacterExtensions
 {
     public static void MapCharacterEndpoint(this WebApplication app)
     {
-        app.MapGet("/api/v1/characters", async ([FromServices] IMediator mediator, int currentPage = 1, int pageSize = 10) =>
+        app.MapGet("/api/v1/characters", async ([FromServices] IMediator mediator, int pageNumber = 1, int pageSize = 10) =>
         {
 
             var query = new CharacterGetAllQuery
             {
-                CurrentPage = currentPage,
+                CurrentPage = pageNumber,
                 PageSize = pageSize,
             };
 
