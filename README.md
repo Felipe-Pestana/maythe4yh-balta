@@ -32,7 +32,10 @@ Desenvolvimento de uma API completa, fornecendo recursos como criação, leitura
 * Muito conhecimento técnico
 
 ## 🧪 Como testar o projeto
-[DESCREVER COMO EXECUTAR O PROJETO]
+* Acesse a pasta \src\MayTheFouthBackend.Presentation\:
+```
+dotnet run
+```
 
 ## Equipe de fornecedora do FrontEnd:<br>
 https://github.com/paulinhps/desafio-balta-may-the-fourth-frontend <br>
