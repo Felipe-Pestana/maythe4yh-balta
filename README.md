@@ -34,5 +34,9 @@ Desenvolvimento de uma API completa, fornecendo recursos como criação, leitura
 ## 🧪 Como testar o projeto
 [DESCREVER COMO EXECUTAR O PROJETO]
 
+## Equipe de fornecedora do FrontEnd:<br>
+https://github.com/paulinhps/desafio-balta-may-the-fourth-frontend <br>
+https://my-the-fourth-challenge.onrender.com/
+
 # 💜 Participe
 Quer participar dos próximos desafios? Junte-se a [maior comunidade .NET do Brasil 🇧🇷 💜](https://balta.io/discord)
