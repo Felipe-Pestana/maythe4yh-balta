@@ -9,13 +9,13 @@ namespace MayTheFouthBackend.Presentation.Extensions
     {
         public static void MapStarshipEndpoint(this WebApplication app)
         {
-            app.MapGet("/api/v1/starships", async ([FromServices] IMediator mediator, int currentPage = 1, int pageSize = 10) =>
+            app.MapGet("/api/v1/starships", async ([FromServices] IMediator mediator, int pageNumber = 1, int pageSize = 10) =>
             {
 
                 var query = new StarshipGetAllQuery
                 {
 
-                    CurrentPage = currentPage,
+                    CurrentPage = pageNumber,
                     PageSize = pageSize,
                 };
 

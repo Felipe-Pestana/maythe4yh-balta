@@ -9,6 +9,7 @@ namespace MayTheFouthBackend.Application.Mappins
         {
             return new VehicleDto
             {
+                Id = vehicle.Id.ToString(),
                 Name = vehicle.Name,
                 Model = vehicle.Model,
                 Manufacturer = vehicle.Manufacturer,
@@ -20,7 +21,7 @@ namespace MayTheFouthBackend.Application.Mappins
                 Cargocapacity = vehicle.Cargocapacity,
                 Consumables = vehicle.Consumables,
                 Class = vehicle.Class,
-                Movies = vehicle.Movies?.Select(x => new ListInfoDto { Id = x.Id, Title = x.Title })
+                Movies = vehicle.Movies?.Select(x => new ListInfoDto { Id = x.Id.ToString(), Title = x.Title })
             };
         }
 

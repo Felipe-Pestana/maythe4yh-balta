@@ -9,17 +9,18 @@ public static class CharacterMapper
     {
         return new CharacterDto
         {
+            Id = character.Id.ToString(),
             Name = character.Name,
             BirthYear = character.BirthYear,
             EyeColor = character.EyeColor,
             Gender = character.Gender,
             HairColor = character.HairColor,
             Height = character.Height,
-            Planet = new ListInfoDto { Id = character.Homeworld.Id, Title = character.Homeworld.Name}, 
+            Planet = new ListInfoDto { Id = character.Homeworld.Id.ToString(), Title = character.Homeworld.Name}, 
             PlanetId = character.PlanetId,
             SkinColor = character.SkinColor,
             Weight = character.Weight,
-            Movies = character.Movies?.Select(x => new ListInfoDto { Id = x.Id, Title = x.Title})
+            Movies = character.Movies?.Select(x => new ListInfoDto { Id = x.Id.ToString(), Title = x.Title})
         };
     }
 

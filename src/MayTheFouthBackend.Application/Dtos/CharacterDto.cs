@@ -4,7 +4,7 @@ namespace MayTheFouthBackend.Application.Dtos;
 
 public class CharacterDto
 {
-
+    public string Id { get; set; }
     public string Name { get; set; } = string.Empty;
     public float Height { get;  set; }
     public float Weight { get;  set; }

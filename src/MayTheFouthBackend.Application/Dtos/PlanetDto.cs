@@ -2,6 +2,7 @@
 {
     public class PlanetDto
     {
+        public string Id { get; set; }
         public string Name { get; set; } = string.Empty;
         public float RotationPeriod { get; set; }
         public int OrbitalPeriod { get; set; }

@@ -9,6 +9,7 @@ public static class MovieMapper
     {
         return new MovieDto
         {
+            Id = movie.Id.ToString(),
             Title = movie.Title,
             Created = movie.Created,
             Director = movie.Director,
@@ -17,10 +18,10 @@ public static class MovieMapper
             Producer = movie.Producer,
             ReleaseDate = movie.ReleaseDate,
             OpeningCrawl = movie.OpeningCrawl,
-            Planets = movie.Planets?.Select(p => new ListInfoDto { Id = p.Id, Title = p.Name }),
-            Characters = movie.Characters?.Select(p => new ListInfoDto { Id = p.Id, Title = p.Name }),
-            Starships = movie.Starships?.Select(p => new ListInfoDto { Id = p.Id, Title = p.Name }),
-            Vehicles = movie.Vehicles?.Select(p => new ListInfoDto { Id = p.Id, Title = p.Name})
+            Planets = movie.Planets?.Select(p => new ListInfoDto { Id = p.Id.ToString(), Title = p.Name }),
+            Characters = movie.Characters?.Select(p => new ListInfoDto { Id = p.Id.ToString(), Title = p.Name }),
+            Starships = movie.Starships?.Select(p => new ListInfoDto { Id = p.Id.ToString(), Title = p.Name }),
+            Vehicles = movie.Vehicles?.Select(p => new ListInfoDto { Id = p.Id.ToString(), Title = p.Name})
 
         }; 
     }
