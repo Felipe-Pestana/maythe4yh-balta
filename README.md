@@ -9,7 +9,7 @@ substitua esse Codigo> ![balta](https://baltaio.blob.core.windows.net/static/ima
 Desenvolvimento de uma API completa, fornecendo recursos como criação, leitura, atualização e exclusão de dados referentes ao universo **Star Wars**.
 
 ## Participantes
-### 🚀 Capitã
+### 🚀 Capitão
 
 | [<img loading="lazy" src="https://media.licdn.com/dms/image/C4D03AQEMmmzbuAZMLQ/profile-displayphoto-shrink_200_200/0/1656625620951?e=1720051200&v=beta&t=mcrWdNvHCD0LHXevZnSxgphzTLv1mDZpzunCOjJjHE0" width=115><br>](https://www.linkedin.com/in/pestana1984/) |
 | :---: |
